@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/contactitem_layout"
+        style="@style/MMListItem"
+        android:gravity="top"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="5dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:paddingLeft="10dip"
+            android:paddingBottom="5dp">
+
+            <EditText
+                android:background="@null"
+                android:enabled="false"
+                android:layout_width="250dp"
+                android:id="@+id/application_title"
+                style="@style/MMListItem"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:maxEms="25"
+                android:layout_marginRight="10dp"
+                android:text="银行大幅上调首套房贷利率 这些人最受影响"
+                android:layout_below="@+id/layout_photo"
+                android:layout_alignParentStart="true"
+
+               />
+
+            <TextView
+                android:id="@+id/application_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="每日必备单词"
+                android:textSize="10sp"
+                android:maxLines="8"
+
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_photo"
+                android:layout_below="@+id/txt_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <com.loopj.android.image.SmartImageView
+                android:id="@+id/application_pic"
+                android:layout_width="80.0dip"
+                android:layout_height="60.0dip"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_headerview_1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:background="@color/black2"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip" />
+
+</RelativeLayout>
+
+
+
+

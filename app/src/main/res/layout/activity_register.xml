@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title_register"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp" >
+
+
+		 <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="48dp" >
+
+            <EditText
+                android:id="@+id/et_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edittext_login"
+                android:hint="@string/nickname"
+                android:inputType="text"
+                android:paddingLeft="90dp"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColorHint="#DDDDDD"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/et_nickname"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/id"
+                android:textColor="#353535"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="48dp" >
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edittext_login"
+                android:hint="@string/inputpwd"
+                android:paddingLeft="90dp"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:maxLength="16"
+                android:textColorHint="#DDDDDD"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/et_password"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/password"
+                android:textColor="#353535"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="48dp" >
+
+            <EditText
+                android:id="@+id/et_repeat_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edittext_login"
+                android:hint="@string/confirmpass"
+                android:maxLength="16"
+                android:paddingLeft="90dp"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColorHint="#DDDDDD"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_repeat_password"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/et_repeat_password"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/confirm_password"
+                android:textColor="#353535"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RadioGroup
+            android:id="@+id/radio_boy_girl"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <TextView
+                android:id="@+id/tv_sex"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/et_password"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/radio_sex"
+                android:textColor="#353535"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radio_sex_boy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/sex_boy" />
+
+            <RadioButton
+                android:id="@+id/radio_sex_girl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radio_sex_girl" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_enable_green"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:text="@string/register"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+         
+    </LinearLayout>
+
+    
+
+</LinearLayout>

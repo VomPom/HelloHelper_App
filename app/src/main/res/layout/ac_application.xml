@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/menu_bg"
+    android:orientation="vertical">
+
+
+
+    <!-- 聊天窗口 底部工具栏 -->
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/custom_botton"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/view_photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btn_express"
+                android:layout_margin="5dp"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:contentDescription="快递查询"
+                android:src="@drawable/tools_express" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/find"
+                android:textColor="@color/black1" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btn_translate"
+                android:layout_margin="5dp"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:contentDescription="@string/tanslate"
+                android:src="@drawable/tools_translation" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/translate"
+                android:textColor="@color/black1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btn_map"
+                android:layout_margin="5dp"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/chat_tool_location" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/app_map"
+                android:textColor="@color/black1" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/custom_botton_2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/view_exchange_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btn_exchangerate"
+                android:layout_margin="5dp"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:src="@drawable/app_exchangerate" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/exchange_rate"
+                android:textColor="@color/black1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_atricle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btn_atricle"
+                android:layout_margin="5dp"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:src="@drawable/article" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/chineseLearn"
+                android:textColor="@color/black1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_about_us"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/about_us"
+                android:layout_margin="5dp"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:src="@drawable/about_us" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/about_us"
+                android:textColor="@color/black1" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/only"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        android:paddingTop="20dp"
+        android:paddingBottom="4dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/view_pho"
+            android:layout_width="0dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btn_feedback"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="60.0dip"
+                android:contentDescription="快递查询"
+                android:src="@drawable/feedback" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:text="Opinion and feedback"
+                android:textColor="@color/black1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<include layout="@layout/application_listview"></include>
+ -->
+
+
+</LinearLayout>
+
+

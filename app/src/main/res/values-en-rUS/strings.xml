@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">HelloHelper</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Application</string>
+    <string name="title_notifications">Personal</string>
+    <string name="setting">Setting</string>
+    <string name="find">FindExpress</string>
+    <string name="countries_and_areas">CountriesAndAreas</string>
+    <string name="password">PWD</string>
+    <string name="input_id">Please Input the Username</string>
+    <string name="id">USER</string>
+    <string name="ple_password">Input Password</string>
+    <string name="login">Login</string>
+    <string name="problems">Login encountered problems?</string>
+    <string name="login_register">Register</string>
+    <string name="confirm_password">PWD2</string>
+    <string name="nickname">Input Username</string>
+    <string name="sex_boy">Boy</string>
+    <string name="radio_sex_girl">Girl</string>
+    <string name="radio_sex">Sex</string>
+    <string name="register">Register</string>
+    <string name="forget">Forgot the password?</string>
+    <string name="Chatting">Chatting</string>
+    <string name="Application">Application</string>
+    <string name="Personal">Personal</string>
+    <string name="Home">Home</string>
+    <string name="share">Share</string>
+    <string name="input_translation_words">Input Your Words</string>
+    <string name="tanslator">Tanslator</string>
+    <string name="express">Express</string>
+
+    <string name="pulish">Published</string>
+    <string name="Head_icon">Head Portrait</string>
+    <string name="informations">Informations</string>
+    <string name="personal_infomation">Personal Information</string>
+    <string name="username">Username</string>
+    <string name="sex">Sex</string>
+    <string name="quit">Logout</string>
+    <string name="submit">Submit</string>
+    <string name="moveAndzoom">Move and Zoom</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose">Selection</string>
+    <string name="chooseFromAblum">Select from the Album</string>
+    <string name="takePhoto">Photograph</string>
+    <string name="tanslate">Tanslate</string>
+    <string name="transl">Tran</string>
+    <string name="translate">Tanslator</string>
+    <string name="activity">Activity</string>
+    <string name="reply">Reply</string>
+    <string name="collection">Collection</string>
+    <string name="feedback">Feedback</string>
+    <string name="inputpwd">Input Password</string>
+    <string name="confirmpass">Input Password Again</string>
+    <string name="ok">OK</string>
+    <string name="paste">Paste</string>
+    <string name="chineseLearn">Learn</string>
+
+    <!--2017-10-->
+    <string name="update_download_failed">Download failed</string>
+    <string name="update_download_start">Download start</string>
+    <string name="update_download_progressing">Downloading</string>
+    <string name="update_download_finish">Download completed</string>
+    <string name="update_immediately">Upgrade now</string>
+    <string name="update_prompt">Upgrade tips</string>
+    <string name="update_nexttime">Next time</string>
+
+
+
+
+    <!-- Naiv-->
+    <string name="map_navi_isToNavigation">Prompt</string>
+    <string name="map_navi_goToNavigation">Click OK to start navigation</string>
+
+    <string name="about_us">About us</string>
+    <string name="exchange_rate">ExchangeRate</string>
+    <string name="app_map">Map</string>
+    <string name="map_navi_isOutOfNavigation">Do you want to quit navigation?</string>
+    <string name="map_navi_OutOfNavigation">Click OK to exit navigation</string>
+
+    <string name="networkIsNotAvailableTitle">Internet Connection</string>
+    <string name="networkIsNotAvailableContent">Please check your internet connection!</string>
+
+    <string name="clear">Clear</string>
+    <string name="app_express_tip_paste">Please paste your short message.</string>
+    <string name="app_expreess_tip_noInput">Please input the message</string>
+
+
+</resources>

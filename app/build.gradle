@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+
+
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.xrone.julis.compous"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 7
+        versionName "1.0.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-vector-drawable:25.3.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile files('src/main/jniLibs/android-smart-image-view-1.0.0.jar')
+    compile files('src/main/jniLibs/android-async-http-1.4.8.jar')
+    compile files('src/main/jniLibs/Amap_2DMap_V5.2.0_20170627.jar')
+    compile files('src/main/jniLibs/AMap3DMap_5.4.0_AMapNavi_5.4.0_20170929.jar')
+    compile files('src/main/jniLibs/Msc.jar')
+    compile files('src/main/jniLibs/AMap_Location_V3.6.1_20171012.jar')
+    compile files('src/main/jniLibs/Sunflower.jar')
+    compile files('src/main/jniLibs/AMap_Search_V5.3.1_20170817.jar')
+    implementation files('src/main/jniLibs/volly-1.0.11.jar')
+
+}
+android {useLibrary 'org.apache.http.legacy'}

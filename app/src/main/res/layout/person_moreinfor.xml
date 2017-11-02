@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/layout_title_personinfo"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="@color/black2"
+                android:layout_width="fill_parent"
+                android:layout_height="10.0dip" />
+
+            <RelativeLayout
+                android:id="@+id/info_change_userHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/setting_item_selector"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    style="@style/TxtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/Head_icon"
+                    android:textSize="18sp" />
+
+                <com.loopj.android.image.SmartImageView
+                    android:id="@+id/person_chage_headImage"
+                    android:layout_width="60.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toStartOf="@+id/imageView"
+                    android:src="@drawable/person_default_head" />
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/right" />
+
+            </RelativeLayout>
+
+            <View
+                android:background="@color/black2"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+               <TextView
+                    android:id="@+id/person_information_name"
+                     style="@style/TxtTitle"
+                      android:layout_width="fill_parent"
+                      android:layout_height="50dp"
+                      android:layout_marginTop="20dp"
+                      android:background="@drawable/setting_item_selector"
+                      android:gravity="center_vertical"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="16dp"
+                      android:text="@string/username"
+                      android:textSize="18sp" />
+                <EditText
+                    android:id="@+id/person_chage_username"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="用户名"
+                    android:textSize="16dp"
+                    android:maxLines="1"
+                    android:maxEms="18"
+                    android:maxLength="18"
+                    android:layout_alignBaseline="@+id/person_information_name"
+                    android:layout_alignBottom="@+id/person_information_name"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <View
+                android:background="@color/black2"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/person_information_sex"
+                style="@style/TxtTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/setting_item_selector"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="16dp"
+                android:text="@string/sex"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/person_chage_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/sex_boy"
+                android:textSize="16dp"
+                style="@style/TxtTitle"
+                android:layout_alignBaseline="@+id/person_information_sex"
+                android:layout_alignBottom="@+id/person_information_sex"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+            <View
+                android:background="@color/black2"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+        </LinearLayout>
+
+    </ScrollView>
+    <Button
+        android:id="@+id/person_chage_submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_enable_green"
+        android:paddingBottom="7dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/submit"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

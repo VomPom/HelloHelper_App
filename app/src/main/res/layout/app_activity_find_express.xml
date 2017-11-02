@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:animateLayoutChanges="true">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/layout_title_express"/>
+
+    <LinearLayout
+        android:layout_below="@id/title"
+        android:id="@+id/cv_describe"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hs_images"
+        android:layout_marginLeft="5dp"
+
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="15dp">
+
+        <EditText
+
+            android:id="@+id/et_express_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/editext_border_layout"
+            android:padding="15dp"
+            android:gravity="top"
+            android:hint="@string/app_express_tip_paste"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/hs_images"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:overScrollMode="never"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        android:layout_above="@+id/rl_bottom_layout"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/btn_express_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:text="@string/clear"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/btn_express_paste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="@string/paste"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/btn_express_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

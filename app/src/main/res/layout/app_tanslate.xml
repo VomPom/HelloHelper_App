@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_material_light"
+    android:orientation="vertical" >
+    <include layout="@layout/layout_title_trans" />
+
+
+
+
+    <LinearLayout
+        android:background="@color/gray2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="0dp"
+        android:weightSum="1">
+
+        <ImageView
+
+            android:id="@+id/iv_voice"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/voice" />
+
+        <EditText
+            android:id="@+id/ed_text_mword"
+            android:layout_width="230dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="0dip"
+            android:layout_marginTop="10dip"
+            android:background="#ffffff"
+            android:hint="@string/input_translation_words"
+            android:textAlignment="center"
+            android:textColor="@color/night_biz_pc_gold_chart_green"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_fanyi"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/blue0"
+            android:text="@string/transl"
+            android:textSize="16dp"
+            android:textColor="@color/base_action_bar_title_weather_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+    <ImageView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/iv_sounder"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dip"
+        android:src="@drawable/sound" />
+    <ImageView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/iv_copy"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dip"
+        android:src="@drawable/copy"
+        android:layout_weight="0.06" /></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray1">
+
+             <ScrollView
+                  android:layout_width="wrap_content"
+                 android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_text_english"
+                style="?android:attr/listChoiceBackgroundIndicator"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10dip"
+                android:layout_marginBottom="10dip"
+                android:gravity="top"
+                android:text="Hello MyFriend"
+                android:textColor="@color/night_biz__chat_vote_blue"
+                android:textSize="20dp" />
+            </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

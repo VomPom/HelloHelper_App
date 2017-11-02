@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">HelloHelper</string>
+    <string name="title_home">主页</string>
+    <string name="title_dashboard">应用</string>
+    <string name="title_notifications">个人</string>
+    <string name="setting">设置</string>
+    <string name="find">查快递</string>
+    <string name="countries_and_areas">国家和地区</string>
+    <string name="password">密码</string>
+    <string name="input_id">请填写用户名</string>
+    <string name="id">用户名</string>
+    <string name="ple_password">填写密码</string>
+    <string name="login">登录</string>
+    <string name="problems">登录遇到问题？</string>
+    <string name="login_register">注册</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="nickname">输入昵称</string>
+    <string name="sex_boy">男</string>
+    <string name="radio_sex_girl">女</string>
+    <string name="radio_sex">性别</string>
+    <string name="register">注册</string>
+    <string name="forget">忘记密码？</string>
+    <string name="Chatting">聊天</string>
+    <string name="Application">应用</string>
+    <string name="Personal">个人</string>
+    <string name="Home">主页</string>
+    <string name="feedback">意见反馈</string>
+    <string name="share">分享</string>
+    <string name="input_translation_words">请输入要翻译的内容</string>
+    <string name="tanslator">翻译</string>
+    <string name="express">快递</string>
+    <string name="pulish">我发布的</string>
+    <string name="Head_icon">头像</string>
+    <string name="informations">信息</string>
+    <string name="personal_infomation">个人信息</string>
+    <string name="username">昵称</string>
+    <string name="sex">性别</string>
+    <string name="quit">退出</string>
+    <string name="submit">提交</string>
+    <string name="moveAndzoom">移动和缩放</string>
+    <string name="cancel">取消</string>
+
+    <string name="choose">选取</string>
+    <string name="chooseFromAblum">从相册选择</string>
+    <string name="takePhoto">拍照</string>
+    <string name="tanslate">翻译</string>
+    <string name="transl">翻译</string>
+    <string name="translate">翻译</string>
+    <string name="activity">活动</string>
+    <string name="reply">与我相关</string>
+    <string name="collection">我的收藏</string>
+    <string name="inputpwd">填写密码</string>
+    <string name="confirmpass">确认密码</string>
+    <string name="chineseLearn">汉语学习</string>
+
+
+
+    <!--2017-10-->
+    <string name="update_download_failed">下载失败</string>
+    <string name="update_download_start">下载开始</string>
+    <string name="update_download_progressing">正在下载</string>
+    <string name="update_download_finish">下载完成</string>
+    <string name="update_immediately">立即升级</string>
+    <string name="update_prompt">升级提示</string>
+    <string name="update_nexttime">下次再说</string>
+    <string name="ok">确定</string>
+    <string name="clear">清空</string>
+    <string name="paste">粘贴</string>
+    <!-- Naiv-->
+
+    <string name="map_navi_isToNavigation">是否开始导航</string>
+    <string name="map_navi_goToNavigation">点击确定开始导航</string>
+
+    <!-- 关于我们-->
+    <string name="about_us">关于我们</string>
+    <string name="exchange_rate">汇率转换</string>
+    <string name="app_map">地图</string>
+    <string name="map_navi_isOutOfNavigation">是否退出导航？</string>
+    <string name="map_navi_OutOfNavigation">点击确定退出导航</string>
+    <string name="Currencylayer_Key">3741afd246e484205bd81b6bf1ac2922</string>
+    <string name="Free_CC_link">http://free.currencyconverterapi.com/api/v3/convert?q=</string>
+
+    <!--全局-->
+    <string name="networkIsNotAvailableTitle">网络错误</string>
+    <string name="networkIsNotAvailableContent">请检查你的网络连接！</string>
+
+
+
+    <!--快递-->
+    <string name="app_express_tip">请粘贴你的短信</string>
+</resources>
