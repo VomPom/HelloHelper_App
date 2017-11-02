@@ -11,9 +11,11 @@ public class Hello {
     public static String id = "null";
     public static String username = "null";
     public static String head_url = "null";
+
     public static boolean isLogin=false;
 
-    
+    public Hello() {
+    }
 }
 
 
