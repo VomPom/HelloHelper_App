@@ -123,6 +123,7 @@ public class ClipImageActivity extends AppCompatActivity implements View.OnClick
             }
             Intent intent = new Intent();
             intent.setData(mSaveUri);
+            Log.e(TAG,mSaveUri.toString());
             setResult(RESULT_OK, intent);
             finish();
         }

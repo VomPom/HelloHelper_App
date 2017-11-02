@@ -33,6 +33,7 @@ import com.xrone.julis.compous.model.StringURL;
 import com.xrone.julis.compous.model.TranslateResultModel;
 import com.xrone.julis.compous.model.UpdateBean;
 import com.xrone.julis.compous.Service.SmsObserver;
+import com.xrone.julis.compous.view.application.exchangeRate.Data.Global_Data;
 import com.xrone.julis.compous.view.fragment.ApplicationFragment;
 import com.xrone.julis.compous.view.fragment.HomeFragment;
 import com.xrone.julis.compous.view.fragment.PersonFragment;
@@ -141,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
      * 初始化一些功能
      */
     public void initFunction(){
+        getAPIVerison();
         /**
          * 检查权限
          */
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         ContentResolver resolver=getContentResolver();
         Uri uri=Uri.parse("content://sms/");
         resolver.registerContentObserver(uri,true,new SmsObserver(this,new Handler()));
-        ListenClipboardService.start(this);
+       // ListenClipboardService.start(this);
 
     }
     /**
@@ -204,6 +206,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         ActivityCompat.requestPermissions(activity, permissionsList.toArray(new String[permissionsList.size()]), REQUEST_CODE_ASK_PERMISSIONS);
+    }
+
+    /**
+     * 获取安卓的版本
+     * @return
+     */
+
+    public static float getAPIVerison() {
+        Float f = null;
+        try {
+            StringBuilder strBuild = new StringBuilder();
+            strBuild.append(android.os.Build.VERSION.RELEASE.substring(0, 2));
+            f = new Float(strBuild.toString());
+        } catch (NumberFormatException e) {
+            Log.e("", "error retriving api version" + e.getMessage());
+        }
+
+        Global_Data.android_version=f.floatValue();
+
+        return f.floatValue();
     }
 
 }

@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -31,6 +32,7 @@ import android.widget.TextView;
 import com.loopj.android.image.SmartImageView;
 import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.R;
+import com.xrone.julis.compous.view.application.exchangeRate.Data.Global_Data;
 
 import java.io.File;
 
@@ -49,6 +51,7 @@ public class PersonInfoView extends Activity implements View.OnClickListener {
     private static final int READ_EXTERNAL_STORAGE_REQUEST_CODE = 103;
     //请求写入外部存储
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 104;
+
     private File tempFile;
     private Button submit;
     private EditText edUsername;
@@ -61,6 +64,12 @@ public class PersonInfoView extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.person_moreinfor);
         initview();
+
+        // android 7.0系统解决拍照的问题
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+        builder.detectFileUriExposure();
+
         createCameraTempFile(savedInstanceState);
     }
     private void initview(){
@@ -77,7 +86,6 @@ public class PersonInfoView extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.info_change_userHead:
-                System.out.println("click");
                 type = 2;
                 uploadHeadImage();
                 break;

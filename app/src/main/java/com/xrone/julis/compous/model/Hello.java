@@ -14,8 +14,7 @@ public class Hello {
 
     public static boolean isLogin=false;
 
-    public Hello() {
-    }
+
 }
 
 
