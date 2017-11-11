@@ -68,44 +68,25 @@
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-            <TextView
 
-                android:layout_margin="20dp"
-                android:layout_width="wrap_content"
+
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/gray"
-                android:textSize="15dp"
-                android:layout_marginBottom="30dp"
-                android:text="最近看了央视的一个节目《开讲啦》，开讲的嘉宾是清华大学副校长、著名科学家施一公。其中，他讲了这样一个观点——不要轻易被身边的价值观所改变。施一公讲了这样一件事：1987年，他还在清华大学读书，一天，他突然接到一个电报“父病危，速归速归”，当他心急火燎赶回家时，发现慈祥的父亲已经因车祸而离世了。他的天空一下垮塌了，以至于后来回到清华时，半夜溜到颐和园狂奔以求释放。大学毕业后，施一公想从政；后来，他又想到香港经商；再后来，他决定到外面的世界去看看，于是到美国去读博。博士毕业后，有著名的保险公司找他任中国首席代理，但施一公还是决定从事生命科学的研究。有美国大学聘请他担任终身教授，但他还是决定回国，他回到了母校清华。
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-可以讲，对施一公而言，从政、经商、做保险、留美，凭他的智慧和能力，哪一个都能做得很好，甚至很极致。但施一公还是义无反顾的待在实验室，走上三尺讲台，在他看来，他要将生命科学的大事做到最好，将“大我”阐释到极致。施一公成功了，于是，他就有了一个极其重要的人生感悟——不要轻易被身边的价值观所改变。
+                <TextView
+                    android:id="@+id/about_us_text"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/activity_about_us"/>
+            </android.support.v4.widget.NestedScrollView>
 
-每一个人都有自己的价值观，社会上有形形色色的人，自然便有了形形色色的价值观。毋庸讳言，不少人的脑子里存在着“小我”的价值观，在工作的选择上，打着个人小算盘：工作环境要好、待遇要优、升职要快、社会地位要高。至于那些艰苦的工作、坐冷板凳的工作、待遇不高的工作，则很少去考虑。尤其是一些心浮气躁的年轻人，价值观很不稳定，容易被身边狭隘的价值观所影响、所左右，频频跳槽，如浮萍一般的飘忽不定。
-
-任何工作都需要有人去做，倘若人人都怕苦怕累嫌待遇低，那我们的国家还能可持续发展吗？还能实现中华民族的伟大复兴吗？中国，太需要有像施一公这样的具有“大我”价值观的高大上的人才。
-
-不要轻易被身边的价值观所改变，这是施一公的人生感悟，也应成为我们每一个人的人生信条，少些“小我”、多些“大我”，活出生命的精彩，创造人生的辉煌。
-
-
-
-
-
-
-
-
-
-
-"/>
-
-
-
-
-
-        </android.support.v4.widget.NestedScrollView>
     </android.support.design.widget.CoordinatorLayout>
 
 </LinearLayout>

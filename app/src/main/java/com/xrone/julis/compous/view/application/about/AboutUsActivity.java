@@ -9,6 +9,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.xrone.julis.compous.R;
 
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class AboutUsActivity extends Activity {
     CollapsingToolbarLayout collapsingToolbar;
-
+    private TextView textView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,7 +34,25 @@ public class AboutUsActivity extends Activity {
     public void initView(){
         collapsingToolbar=(CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle("COME ON WITH US!");
-
+        textView=(TextView)findViewById(R.id.about_us_text);
+        textView.setText("Dear Friend:"+"\n"+"We are a team from Wenzhou University," +
+                " in order to help foreign students in China better life and learning, " +
+                "on the APP provides the express point query, exchange community, " +
+                "text translation, exchange rate conversion and other functions." +
+                " When the user registers an account, " +
+                "it automatically jumps to the map navigation interface by inputting" +
+                " the text message, and adds English pronunciation and " +
+                "synchronized English subtitles when using the map related function. " +
+                "At the same time, Chinese and foreign users can publish some of their " +
+                "own articles or ideas in the communication community, at the same time," +
+                " comments and replies, and promote exchanges between China and foreign countries.\n" +
+                "Although we have tried to improve, " +
+                "but there are many defects and deficiencies, in order to give you more help," +
+                " if you find any problems in the process of use, please give us app_feedback," +
+                " we will be the first time to make corrections, only in this way," +
+                " we can make progress together, grow together."+"\n"+
+                "Contact us: "+"\n"+"WeChat：julis617669559"+"\n"+
+                "Email:1607637473@qq.com");
 
     }
 

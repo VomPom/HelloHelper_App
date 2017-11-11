@@ -84,8 +84,19 @@
     <string name="networkIsNotAvailableTitle">网络错误</string>
     <string name="networkIsNotAvailableContent">请检查你的网络连接！</string>
 
+    <string name="chEnArticle">文化学习</string>
+
 
 
     <!--快递-->
-    <string name="app_express_tip">请粘贴你的短信</string>
+    <string name="app_express_tip">请粘贴你的短信.</string>
+    <string name="activity_about_us">
+    Dear Friend:\n
+        We are a team from the Wenzhou University, in order to help students in China better life and learning, in the APP to provide a delivery point query, community, text translation, exchange rate conversion etc.. When the user registers an account, it automatically jumps to the map navigation interface by inputting the text message, and adds English pronunciation and synchronized English subtitles when using the map related function. At the same time, Chinese and foreign users can publish some of their own articles or ideas in the communication community, at the same time, comments and replies, and promote exchanges between China and foreign countries.
+        Although we have tried to improve, but there are many defects and deficiencies, in order to give you more help, if you find any problems in the process of use, please give us feedback, we will be the first time to make corrections, only in this way, we can make progress together, grow together.
+        \nContact Information：
+        \n\tWeChat: julis617669559
+        \n\tEmail: 1607637473@qq.com\n\n\n\n\n.
+
+    </string>
 </resources>

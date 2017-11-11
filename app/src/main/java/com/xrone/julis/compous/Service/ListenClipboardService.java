@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
-import com.xrone.julis.compous.Utils.VolleyResponseListener;
+import com.xrone.julis.compous.Utils.TransLateresults;
 import com.xrone.julis.compous.model.TranslateResultModel;
 import com.xrone.julis.compous.view.application.translate.TipViewController;
 
@@ -44,7 +44,7 @@ public final class ListenClipboardService extends Service{
                     }
                 });
 
-                TransLaterUtilts.getData(context,text,new VolleyResponseListener() {
+                TransLaterUtilts.getData(context,text,new TransLateresults() {
                     @Override
                     public void setPropety(TranslateResultModel resultModel) {
                         mTipViewController.setRestult(resultModel.getDst());

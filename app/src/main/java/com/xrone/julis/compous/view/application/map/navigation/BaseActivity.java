@@ -49,7 +49,6 @@ public class BaseActivity extends Activity implements AMapNaviListener, AMapNavi
       //  mTtsManager = TTSController.getInstance(getApplicationContext());
        // mTtsManager.init();
 
-        //
         mAMapNavi = AMapNavi.getInstance(getApplicationContext());
         mAMapNavi.addAMapNaviListener(this);
 

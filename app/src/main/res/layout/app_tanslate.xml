@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="0dp"
         android:weightSum="1">
 
         <ImageView
@@ -28,12 +27,14 @@
             android:src="@drawable/voice" />
 
         <EditText
-            android:id="@+id/ed_text_mword"
+           android:id="@+id/ed_text_mword"
             android:layout_width="230dp"
             android:layout_height="40dp"
             android:layout_marginLeft="5dip"
             android:layout_marginRight="0dip"
             android:layout_marginTop="10dip"
+            android:maxLines="1"
+            android:layout_weight="1"
             android:background="#ffffff"
             android:hint="@string/input_translation_words"
             android:textAlignment="center"
@@ -49,7 +50,7 @@
             android:layout_marginRight="10dp"
             android:background="@color/blue0"
             android:text="@string/transl"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textColor="@color/base_action_bar_title_weather_color" />
     </LinearLayout>
 

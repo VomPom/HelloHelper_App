@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/home_translae_wight" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+     <!--
+        <com.xrone.julis.compous.view.HomeFragment.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:indicator_drawable_selected="@color/red"
+            app:indicator_drawable_unselected="@android:color/white"
+            app:indicator_height="4dp"
+            app:indicator_margin="4dp"
+            app:indicator_width="20dp" />
+     -->
+
+        <ListView
+
+            android:id="@+id/lv_home_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ListView>
+        </LinearLayout>
+        <FrameLayout
+           android:layout_gravity="bottom"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/share_floatBtn"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabSize="normal"
+                app:backgroundTint="@color/blue0"
+                android:src="@drawable/btn_share"/>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>
+
+
+

@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.xrone.julis.compous.MainActivity;
 import com.xrone.julis.compous.R;
@@ -27,19 +28,14 @@ public class CheckVersion {
     private UpdateBean updateBean=new UpdateBean();
     private static boolean updateFlag=false;//是否弹出更新界面标志
     private Context context;
-
     public CheckVersion(Context context) {
         this.context = context;
     }
-
 
     public  boolean isUpdateFlag() {
         return updateFlag;
     }
 
-    public  void setUpdateFlag(boolean updateFlag) {
-        CheckVersion.updateFlag = updateFlag;
-    }
 
     /**
      * 获取服务器更新数据
@@ -79,7 +75,6 @@ public class CheckVersion {
      * @throws PackageManager.NameNotFoundException
      */
     public void compareVersion() throws PackageManager.NameNotFoundException {
-        System.out.println(updateBean.toString());
         //获取当前程序的版本号
         //获取packagemanager的实例
         PackageManager packageManager = context.getPackageManager();
@@ -99,7 +94,6 @@ public class CheckVersion {
      */
     public void updateMessage(){
 
-
         updateFlag=true;
         CommonDialog.Builder builder = new CommonDialog.Builder(context);
         builder.setTitle(R.string.update_prompt);
@@ -110,6 +104,7 @@ public class CheckVersion {
                 dialog.dismiss();
                 Intent intent = new Intent(context, UpdateService.class);
                 intent.putExtra("apkUrl", updateBean.getUpdateUrl());
+                Log.e("downloadURL",updateBean.getUpdateUrl());
                 context.startService(intent);
 
             }

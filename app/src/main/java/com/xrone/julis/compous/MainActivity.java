@@ -4,14 +4,10 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -20,28 +16,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.xrone.julis.compous.Service.ListenClipboardService;
+import com.baidu.mobstat.SendStrategyEnum;
+import com.baidu.mobstat.StatService;
 import com.xrone.julis.compous.Utils.BottomNavigationViewHelper;
 import com.xrone.julis.compous.Utils.CheckVersion;
-import com.xrone.julis.compous.Utils.HttpUtils;
-import com.xrone.julis.compous.Utils.TransLaterUtilts;
 import com.xrone.julis.compous.Utils.Utils;
-import com.xrone.julis.compous.Utils.VolleyResponseListener;
-import com.xrone.julis.compous.Utils.update.CommonDialog;
-import com.xrone.julis.compous.Utils.update.UpdateService;
-import com.xrone.julis.compous.model.StringURL;
-import com.xrone.julis.compous.model.TranslateResultModel;
-import com.xrone.julis.compous.model.UpdateBean;
 import com.xrone.julis.compous.Service.SmsObserver;
 import com.xrone.julis.compous.view.application.exchangeRate.Data.Global_Data;
-import com.xrone.julis.compous.view.fragment.ApplicationFragment;
-import com.xrone.julis.compous.view.fragment.HomeFragment;
-import com.xrone.julis.compous.view.fragment.PersonFragment;
+import com.xrone.julis.compous.view.application.ApplicationFragment;
+import com.xrone.julis.compous.view.HomeFragment.HomeFragment;
+import com.xrone.julis.compous.view.HomeFragment.banner.PersonFragment;
 import com.xrone.julis.compous.model.Hello;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -124,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         initData();
         initView();
         initFunction();
-
     }
 
     /**
@@ -158,12 +142,19 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         /**
+         * 百度数据统计
+         */
+        StatService.start(this);
+
+        /**
          * 监听短信
          */
-        ContentResolver resolver=getContentResolver();
-        Uri uri=Uri.parse("content://sms/");
-        resolver.registerContentObserver(uri,true,new SmsObserver(this,new Handler()));
-       // ListenClipboardService.start(this);
+//        ContentResolver resolver=getContentResolver();
+//        Uri uri=Uri.parse("content://sms/");
+//        resolver.registerContentObserver(uri,true,new SmsObserver(this,new Handler()));
+//
+
+        // ListenClipboardService.start(this);
 
     }
     /**

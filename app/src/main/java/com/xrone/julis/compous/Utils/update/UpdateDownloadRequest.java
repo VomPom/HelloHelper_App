@@ -37,25 +37,20 @@ public class UpdateDownloadRequest implements Runnable{
      * 真正的去建立连接的方法
      */
     private void makeRequest() throws IOException {
-        System.out.println("请求连接");
         if(!Thread.currentThread().isInterrupted()){
-
             try {
                 URL url = new URL(downloadUrl);
-                System.out.println("下载地址+"+downloadUrl);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setConnectTimeout(5000);
                 connection.setRequestProperty("Connection", "Keep-Alive");
                 connection.connect();
                 currentLength = connection.getContentLength();
-
                 if(!Thread.currentThread().isInterrupted()){
                     downloadResponseHandler.sendResponseMessage(connection.getInputStream());
                 }
             }catch (Exception e){
                 throw e;
-
             }
         }
     }
@@ -96,7 +91,6 @@ public class UpdateDownloadRequest implements Runnable{
         public DownloadResponseHandler(){
 
             handler = new Handler(Looper.getMainLooper()) {
-
                 @Override
                 public void handleMessage(Message msg) {
                     handleSelfMessage(msg);
@@ -198,10 +192,7 @@ public class UpdateDownloadRequest implements Runnable{
                         randomAccessFile.write(buffer, 0 ,length);
                         completeSize += length;
                         if(completeSize < currentLength){
-                            Log.e("tag", "completeSize="+completeSize);
-                            Log.e("tag", "currentLength="+currentLength);
                             progress = (int)(Float.parseFloat(getTwoPointFloatStr(completeSize/currentLength))*100);
-                          //  Log.e("tag", "下载进度："+progress);
                             if(limit % 30==0 && progress <= 100){//隔30次更新一次notification
                                 sendProgressChangedMessage(progress);
                             }

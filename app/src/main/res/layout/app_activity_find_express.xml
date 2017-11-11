@@ -31,7 +31,7 @@
             android:background="@drawable/editext_border_layout"
             android:padding="15dp"
             android:gravity="top"
-            android:hint="@string/app_express_tip_paste"
+            android:hint="@string/app_express_tip"
             android:textColorHint="@color/gray"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"/>

@@ -83,5 +83,11 @@ public abstract class MyAlert {
         isToNavigationAlert.show();
     }
 
+    public static void showErrorMessage(Context context, String title, String content){
+        AlertDialog isToNavigationAlert = new AlertDialog.Builder(context).create();
+        isToNavigationAlert.setTitle(title);
+        isToNavigationAlert.setMessage(content);
+        isToNavigationAlert.show();
+    }
 
 }

@@ -55,7 +55,7 @@ public class Feedback_Activity extends Activity {
                     @Override
                     public void onResponse(String s) {
                         dialog.dismiss();
-                        MyAlert.showSuccess(getBaseContext());
+                        MyAlert.showSuccess(Feedback_Activity.this);
                     }
                 }, new Response.ErrorListener() {
                     @Override

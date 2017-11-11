@@ -9,7 +9,7 @@ android {
         applicationId "com.xrone.julis.compous"
         minSdkVersion 19
         targetSdkVersion 25
-        versionCode 7
+        versionCode 9
         versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -28,7 +28,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-vector-drawable:25.3.1'
@@ -44,6 +43,7 @@ dependencies {
     compile files('src/main/jniLibs/Sunflower.jar')
     compile files('src/main/jniLibs/AMap_Search_V5.3.1_20170817.jar')
     implementation files('src/main/jniLibs/volly-1.0.11.jar')
-
+    implementation 'com.github.bumptech.glide:glide:4.3.0'
+    implementation files('src/main/jniLibs/Baidu_Mtj_3.8.1.6.jar')
 }
 android {useLibrary 'org.apache.http.legacy'}

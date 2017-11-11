@@ -18,27 +18,28 @@ public class StringURL {
     /**
      *
      */
-    public static final String APPINFORMATION_URL="http://123.207.24.167/hello/getJSONApplicationinfomation.php";
+    public static final String WEBSITE="http://123.207.24.167";
+    public static final String APPINFORMATION_URL=WEBSITE+"/hello/getJSONApplicationinfomation.php";
     /**
      * 新闻信息
      */
-    public static final String GET_NEWS_URL="http://123.207.24.167/hello/getJSONinfomation.php";
+    public static final String GET_NEWS_URL=WEBSITE+"/hello/getJSONinfomation.php";
     /**
      * 分享交流
      */
-    public static final String SHARE_URL="http://123.207.24.167/hello/share.php";
+    public static final String SHARE_URL=WEBSITE+"/hello/share.php";
     /**
      * 注册链接
      */
-    public static final String REG_URL="http://123.207.24.167/hello/register.php";
+    public static final String REG_URL=WEBSITE+"/hello/register.php";
     /**
      * 登陆链接
      */
-    public static final String LOGIN_URL="http://123.207.24.167/hello/login.php";
+    public static final String LOGIN_URL=WEBSITE+"/hello/login.php";
     /**
      * 快递查询
      */
-    public static final String EXPRESS_URL= "http://www.xrone.cn/hellohelper/appsearch.html";
+    public static final String EXPRESS_URL= WEBSITE+"/hellohelper/appsearch.html";
     /**
      * 默认头像
      */
@@ -46,16 +47,20 @@ public class StringURL {
     /**
      * 检查更新
      */
-    public static final String CHECKUPDATE_URL ="http://123.207.24.167/hello/versionControl.php";
+    public static final String CHECKUPDATE_URL =WEBSITE+"/hello/versionControl.php";
     /**
      *获取快递点信息
      */
-    public static final String GET_EXPRESS_PLACES_URL ="http://123.207.24.167/hello/getExpressPlaces.php";
+    public static final String GET_EXPRESS_INFO_URL =WEBSITE+"/hello/getExpressInfo.php";
+    /**
+     *获取快递点信息
+     */
+    public static final String GET_EXPRESS_PLACES_URL =WEBSITE+"/hello/getExpressPlaces.php";
 
 
     /**
      * 反馈页面网址
      */
-    public static final String FEEDBACK_URL="http://123.207.24.167/hello/feedback.php";
+    public static final String FEEDBACK_URL=WEBSITE+"/hello/feedback.php";
 
 }

@@ -44,11 +44,11 @@ public class TransLaterUtilts {
     }
 
 
-    public static void getData(Context context, String string,VolleyResponseListener volleyResponseListener){
+    public static void getData(Context context, String string,TransLateresults transLateresults){
 
         final String realRequesUrl=getTranslateURL(string);
         RequestQueue mQueue=Volley.newRequestQueue(context);
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, realRequesUrl,volleyResponseListener,new VolleyResponseError());
+        StringRequest stringRequest=new StringRequest(Request.Method.GET, realRequesUrl, transLateresults,new VolleyResponseError());
         mQueue.add(stringRequest);
 
     }

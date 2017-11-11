@@ -3,7 +3,6 @@ package com.xrone.julis.compous.view.application.map;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -21,12 +20,8 @@ import com.amap.api.maps2d.AMap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import com.amap.api.maps2d.LocationSource;
@@ -41,24 +36,16 @@ import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.Marker;
 import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
-import com.amap.api.maps2d.overlay.PoiOverlay;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
-import com.amap.api.services.core.PoiItem;
-import com.amap.api.services.core.SuggestionCity;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
-import com.amap.api.services.help.Inputtips;
-import com.amap.api.services.help.InputtipsQuery;
-import com.amap.api.services.help.Tip;
-import com.amap.api.services.poisearch.PoiResult;
-import com.amap.api.services.poisearch.PoiSearch;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.HttpUtils;
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
-import com.xrone.julis.compous.Utils.VolleyResponseListener;
+import com.xrone.julis.compous.Utils.TransLateresults;
 import com.xrone.julis.compous.model.StringURL;
 
 import com.xrone.julis.compous.model.TranslateResultModel;
@@ -74,9 +61,6 @@ import org.json.JSONObject;
 import com.amap.api.services.geocoder.GeocodeSearch.OnGeocodeSearchListener;
 import com.xrone.julis.compous.view.application.map.utils.SensorEventHelper;
 import com.xrone.julis.compous.view.application.map.utils.ToastUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Julis on 2017/10/13.
@@ -106,7 +90,29 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
     private SensorEventHelper mSensorHelper;
     private String nowCityString=null;
 
-
+    public Handler handler =   new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            String jsonData = (String) msg.obj;
+            try {
+                //获取Json数组里面的值，并加入到Information对象里面去
+                JSONArray jsonArray = new JSONArray(jsonData);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject object = jsonArray.getJSONObject(i);
+                    double altitude = Double.parseDouble(object.getString("altitude"));
+                    double longitude = Double.parseDouble(object.getString("longitude"));
+                    String place = (String) object.get("place");
+                    String content = (String) object.get("content");
+                    LatLng latLng = new LatLng(altitude, longitude);
+                    addExpressSignByLongPress(latLng, place, content);
+                    System.out.println("altitude:" + altitude + "\nlongitude:" + longitude);
+                }
+            } catch (JSONException e) {
+                Log.e("tttt","执行了11"+e);
+                e.printStackTrace();
+            }
+        }
+    };
 //    private PoiResult myPoiResult; // poi返回的结果
 //    private int currentPage = 0;// 当前页面，从0开始计数
 //    private PoiSearch.Query query;// Poi查询条件类
@@ -125,7 +131,9 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         mapView.onCreate(savedInstanceState);// 此方法必须重写
         initViews();
         init();
+        Log.e("tttt","执行了11");
         HttpUtils.getNewsJSON(StringURL.GET_EXPRESS_PLACES_URL, handler);
+        Log.e("tttt","执行了22222");
 
     }
 
@@ -211,7 +219,9 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
     protected void onResume() {
         super.onResume();
         mapView.onResume();
+        Log.e("onResum","null");
         if (mSensorHelper != null) {
+            Log.e("onResum","null");
             mSensorHelper.registerSensorListener();
         }
     }
@@ -222,7 +232,6 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
     @Override
     protected void onPause() {
         super.onPause();
-        mapView.onPause();
         mapView.onPause();
         locationSource.deactivate();
         if (mSensorHelper != null) {
@@ -284,12 +293,13 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         Bitmap bMap = BitmapFactory.decodeResource(this.getResources(),
                 R.drawable.app_map_navi_gps_locked);
         BitmapDescriptor des = BitmapDescriptorFactory.fromBitmap(bMap);
-          MarkerOptions options = new MarkerOptions();
+        MarkerOptions options = new MarkerOptions();
         options.icon(des);
         options.anchor(0.5f, 0.5f);
         options.position(latlng);
         mLocMarker = aMap.addMarker(options);
         mLocMarker.setTitle(aMapLocation.getCity());
+
         mLocMarker.setSnippet(aMapLocation.getAddress());
      }
 
@@ -334,6 +344,10 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         }
     };
     private void addCircle(LatLng latlng, double radius) {
+
+        if(mCircle!=null){
+            mCircle.remove();
+        }
         CircleOptions options = new CircleOptions();
         options.strokeWidth(1f);
         options.fillColor(FILL_COLOR);
@@ -341,6 +355,8 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         options.center(latlng);
         options.radius(radius);
         mCircle = aMap.addCircle(options);
+
+
     }
 
 //    /**
@@ -681,7 +697,7 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
      * @param playText
      */
     public void transLateText(final String playText) {
-        TransLaterUtilts.getData(getBaseContext(),playText,new VolleyResponseListener() {
+        TransLaterUtilts.getData(getBaseContext(),playText,new TransLateresults() {
             @Override
             public void setPropety(TranslateResultModel resultModel) {
                 regeoMarker.setTitle("目标位置/TargetPosition");
@@ -693,30 +709,7 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         });
 
     }
-    public Handler handler =   new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            String jsonData = (String) msg.obj;
-            System.out.println(jsonData);
-            try {
-
-                //获取Json数组里面的值，并加入到Information对象里面去
-                JSONArray jsonArray = new JSONArray(jsonData);
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject object = jsonArray.getJSONObject(i);
-                    double altitude = Double.parseDouble(object.getString("altitude"));
-                    double longitude = Double.parseDouble(object.getString("longitude"));
-                    String place = (String) object.get("place");
-                    String content = (String) object.get("content");
-                    LatLng latLng = new LatLng(altitude, longitude);
-                    addExpressSignByLongPress(latLng, place, content);
-                    System.out.println("altitude:" + altitude + "\nlongitude:" + longitude);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    };
 
 
-};
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+  <paths>
+    <external-path path="Android/data/com.xrone.julis.compous/" name="files_root"/>
+    <external-path path="." name="external_storage_root"/>
+  </paths>
+</resource>

@@ -71,7 +71,7 @@
     <string name="map_navi_isToNavigation">Prompt</string>
     <string name="map_navi_goToNavigation">Click OK to start navigation</string>
 
-    <string name="about_us">About us</string>
+    <string name="about_us">AboutUs</string>
     <string name="exchange_rate">ExchangeRate</string>
     <string name="app_map">Map</string>
     <string name="map_navi_isOutOfNavigation">Do you want to quit navigation?</string>
@@ -81,8 +81,9 @@
     <string name="networkIsNotAvailableContent">Please check your internet connection!</string>
 
     <string name="clear">Clear</string>
-    <string name="app_express_tip_paste">Please paste your short message.</string>
-    <string name="app_expreess_tip_noInput">Please input the message</string>
 
+    <string name="app_express_tip">Please paste your short message.</string>
+    <string name="app_expreess_tip_noInput">Please input the message</string>
+    <string name="chEnArticle">Culture Learning</string>
 
 </resources>
