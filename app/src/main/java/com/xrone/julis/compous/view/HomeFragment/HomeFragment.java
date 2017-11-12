@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -23,9 +24,9 @@ import com.xrone.julis.compous.model.UserInformation;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.model.StringURL;
 import com.xrone.julis.compous.adpter.ShareAdapter;
-import com.xrone.julis.compous.view.application.translate.BDTranslator;
 import com.xrone.julis.compous.Utils.HttpUtils;
 import com.xrone.julis.compous.view.LoginAndRegister.LoginActivity;
+import com.xrone.julis.compous.view.application.translate.Translate;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,14 +49,12 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
     private ShareAdapter shareAdapter;
     private List<UserInformation> informations = new ArrayList<>();
 
-
     public static List<?> images=new ArrayList<>();
     private String[] urls;
     private String[] tips ;
 
     @Override
     public void onStop() {
-
         super.onStop();
     }
 
@@ -87,6 +86,8 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        Log.e("view","view创建");
         initViews();
         initDatas();
     }
@@ -116,26 +117,13 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
         voice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BDTranslator.class);
+                Intent intent = new Intent(getActivity(), Translate.class);
                 intent.putExtra("text", "order");
                 startActivity(intent);
             }
         });
-        fanyi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (editText.getText().toString().equals(""))
-                    Toast.makeText(getActivity(), "请输入要翻译的内容！\n" +
-                            "Please enter what you want to translate!", Toast.LENGTH_SHORT).show();
-                else {
 
-                    Intent intent = new Intent(getActivity(), BDTranslator.class);
-                    intent.putExtra("text", editText.getText().toString());
-                    editText.setSelection(editText.getText().toString().length());
-                    startActivity(intent);
-                }
-            }
-        });
+
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,33 +137,54 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
                 }
             }
         });
+
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 return (event.getKeyCode()==KeyEvent.KEYCODE_ENTER);
             }
         });
-        editText.setOnKeyListener(new View.OnKeyListener() {
 
+
+        editText.setOnKeyListener(new View.OnKeyListener(){
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
+
                 boolean flag=false;
-                if(keyCode == KeyEvent.KEYCODE_ENTER){
+                if(keyCode == KeyEvent.KEYCODE_ENTER&&event.getAction()==KeyEvent.ACTION_UP){
                     if (editText.getText().toString().equals("")) {
                         flag=true;
                         Toast.makeText(getActivity(), "请输入要翻译的内容！\n" +
                                 "Please enter what you want to translate!", Toast.LENGTH_SHORT).show();
+
+
                     }else {
-                        editText.setSelection(editText.getText().toString().length());
-                        Intent intent = new Intent(getActivity(), BDTranslator.class);
+                        Intent intent = new Intent(getActivity(), Translate.class);
                         intent.putExtra("text", editText.getText().toString());
-                        Toast.makeText(getActivity(),editText.getText().toString(),Toast.LENGTH_SHORT).show();
+                        editText.setSelection(editText.getText().toString().length());
                         startActivity(intent);
                     }
                 }
                 return  flag;
             }
         });
+
+
+        fanyi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (editText.getText().toString().equals(""))
+                    Toast.makeText(getActivity(), "请输入要翻译的内容！\n" +
+                            "Please enter what you want to translate!", Toast.LENGTH_SHORT).show();
+                else {
+                    Intent intent = new Intent(getActivity(), Translate.class);
+                    intent.putExtra("text", editText.getText().toString());
+                    editText.setSelection(editText.getText().toString().length());
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -184,6 +193,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
         shareAdapter = new ShareAdapter(this.getActivity(), informations);
         sharelistview.setAdapter(shareAdapter);
         sharelistview.setOnItemClickListener(this);
+
         return view;
     }
     @Override

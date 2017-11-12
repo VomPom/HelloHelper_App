@@ -136,7 +136,10 @@
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dip" />
 
-
+            <RelativeLayout
+                android:id="@+id/person_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/txt_smail"
                 style="@style/TxtTitle"
@@ -152,6 +155,7 @@
                 android:drawableLeft="@drawable/person_consulation"
                 android:drawableRight="@drawable/right"
                 android:text="@string/feedback" />
+            </RelativeLayout>
             <View
                 android:background="@color/black2"
                 android:layout_width="fill_parent"

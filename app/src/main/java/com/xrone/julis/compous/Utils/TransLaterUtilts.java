@@ -44,8 +44,7 @@ public class TransLaterUtilts {
     }
 
 
-    public static void getData(Context context, String string,TransLateresults transLateresults){
-
+    public static void getData(Context context, String string,TransLatorCallback transLateresults){
         final String realRequesUrl=getTranslateURL(string);
         RequestQueue mQueue=Volley.newRequestQueue(context);
         StringRequest stringRequest=new StringRequest(Request.Method.GET, realRequesUrl, transLateresults,new VolleyResponseError());

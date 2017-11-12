@@ -16,6 +16,7 @@ import com.xrone.julis.compous.view.application.Express.ExpressActivity;
 import com.xrone.julis.compous.view.application.about.AboutUsActivity;
 import com.xrone.julis.compous.view.application.exchangeRate.CurrencyConverterActivity;
 import com.xrone.julis.compous.view.application.map.MapActivity;
+import com.xrone.julis.compous.view.application.translate.Translate;
 
 /**
  * Created by Julis on 17/6/11.
@@ -28,7 +29,6 @@ public class ApplicationFragment extends Fragment{
     private ImageView btn_about_us;
     private ImageView btn_exchangerate;
     private ImageView btn_article;
-    private ImageView btn_feedback;
    // private ListView  applicationListview;
 
 
@@ -77,7 +77,6 @@ public class ApplicationFragment extends Fragment{
         btn_about_us=(ImageView)view.findViewById(R.id.about_us);
         btn_exchangerate=(ImageView)view.findViewById(R.id.btn_exchangerate);
         btn_article=(ImageView)view.findViewById(R.id.btn_atricle);
-        btn_feedback=(ImageView)view.findViewById(R.id.btn_feedback);
         btn_express.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,8 +86,9 @@ public class ApplicationFragment extends Fragment{
         btn_translate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getActivity(), BDTranslator.class);
-                i.putExtra("text","translate");
+                //Intent i= new Intent(getActivity(), BDTranslator.class);
+                Intent i= new Intent(getActivity(), Translate.class);
+                i.putExtra("text","home");
                 startActivity(i);
             }});
         btn_map.setOnClickListener(new View.OnClickListener() {
@@ -118,13 +118,7 @@ public class ApplicationFragment extends Fragment{
                 startActivity(i);
             }
         });
-        btn_feedback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(getActivity(),Feedback_Activity.class);
-                startActivity(i);
-            }
-        });
+
 
 
     }

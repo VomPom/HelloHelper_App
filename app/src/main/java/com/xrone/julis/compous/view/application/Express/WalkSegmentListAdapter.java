@@ -1,7 +1,6 @@
 package com.xrone.julis.compous.view.application.Express;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,9 +9,6 @@ import android.widget.TextView;
 
 import com.amap.api.services.route.WalkStep;
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.Utils.TransLaterUtilts;
-import com.xrone.julis.compous.Utils.TransLateresults;
-import com.xrone.julis.compous.model.TranslateResultModel;
 import com.xrone.julis.compous.view.application.map.utils.AMapUtil;
 
 import java.util.ArrayList;

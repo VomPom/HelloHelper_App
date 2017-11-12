@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -80,11 +81,12 @@ public class CurrencyConverterActivity extends Activity {
         button_convert      =   (Button)findViewById(R.id.button_convert)             ;
         btn_exchange_country=(ImageView)findViewById(R.id.btn_exchange_country);
 
+
         getAPIVerison();
         sDefSystemLanguage = Locale.getDefault().getLanguage();
         currences_names= new ArrayList<>();
 
-        pDialog = new ProgressDialog(getBaseContext());
+        pDialog = new ProgressDialog(CurrencyConverterActivity.this);
 
         first_country_short = "CNY";
         second_country_short= "USD";
@@ -118,6 +120,7 @@ public class CurrencyConverterActivity extends Activity {
         button_convert.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
+
               excuteQuery();
           }
         });
@@ -155,16 +158,22 @@ public class CurrencyConverterActivity extends Activity {
      * 查询汇率
      */
     public void excuteQuery(){
-        from_amount = from_edittext.getText().toString();
 
-        String get_cc_link = getResources().getString(R.string.Free_CC_link);
-        url_Result = get_cc_link + first_country_short + "_" + second_country_short;
-        Log.e("urlResult",url_Result);
-        if (isNetworkAvailable()) {
-            new GetExchangeRates1().execute();
-        } else {
-            MyAlert.showErroNetworking(CurrencyConverterActivity.this);
-        }
+            if(from_edittext.getText().toString().equals("")){
+
+                Snackbar.make(button_convert, getString(R.string.app_expreess_tip_noInput), Snackbar.LENGTH_SHORT)
+                        .show();
+            }else {
+                from_amount = from_edittext.getText().toString();
+                String get_cc_link = getResources().getString(R.string.Free_CC_link);
+                url_Result = get_cc_link + first_country_short + "_" + second_country_short;
+                Log.e("urlResult", url_Result);
+                if (isNetworkAvailable()) {
+                    new GetExchangeRates1().execute();
+                } else {
+                    MyAlert.showErroNetworking(CurrencyConverterActivity.this);
+                }
+            }
     }
 
 
@@ -209,8 +218,7 @@ public class CurrencyConverterActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
           pDialog.setMessage("Please wait...");
-          pDialog.setCancelable(false);
-                //    pDialog.show();
+          pDialog.show();
         }
         @Override
         protected Void doInBackground(Void... arg0) {
@@ -221,6 +229,7 @@ public class CurrencyConverterActivity extends Activity {
                 jsonObj_result = new JSONObject(json_Result);
                 final_Result  = jsonObj_result.getJSONObject("results").toString();
             }catch (JSONException e) {
+
                 Log.e("JSON Parser", "Error parsing data " + e.toString());
             }
 

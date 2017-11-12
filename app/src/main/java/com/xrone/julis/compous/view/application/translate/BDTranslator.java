@@ -28,7 +28,7 @@ import com.iflytek.cloud.ui.RecognizerDialogListener;
 import com.xrone.julis.compous.Utils.MyAlert;
 import com.xrone.julis.compous.Utils.Speaker;
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
-import com.xrone.julis.compous.Utils.TransLateresults;
+import com.xrone.julis.compous.Utils.TransLatorCallback;
 import com.xrone.julis.compous.model.TranslateResultModel;
 import com.xrone.julis.compous.Utils.NetworkStatus;
 
@@ -201,7 +201,7 @@ public class BDTranslator extends Activity {
 					"Please enter what you want to translate", Toast.LENGTH_SHORT).show();
 		} else {
 			edTextMword.setSelection(edTextMword.getText().toString().length());
-			TransLaterUtilts.getData(getBaseContext(), mWord, new TransLateresults() {
+			TransLaterUtilts.getData(getBaseContext(), mWord, new TransLatorCallback() {
 				@Override
 				public void setPropety(TranslateResultModel resultModel) {
 					tvTextAfter.setText(resultModel.getDst());

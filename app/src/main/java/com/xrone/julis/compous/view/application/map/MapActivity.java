@@ -3,6 +3,7 @@ package com.xrone.julis.compous.view.application.map;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,9 +18,11 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps2d.AMap.OnMapLongClickListener;
 import com.amap.api.maps2d.AMap;
 
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -45,7 +48,7 @@ import com.amap.api.services.geocoder.RegeocodeResult;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.HttpUtils;
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
-import com.xrone.julis.compous.Utils.TransLateresults;
+import com.xrone.julis.compous.Utils.TransLatorCallback;
 import com.xrone.julis.compous.model.StringURL;
 
 import com.xrone.julis.compous.model.TranslateResultModel;
@@ -134,7 +137,7 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         Log.e("tttt","执行了11");
         HttpUtils.getNewsJSON(StringURL.GET_EXPRESS_PLACES_URL, handler);
         Log.e("tttt","执行了22222");
-
+        initGPS();
     }
 
 
@@ -637,6 +640,40 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
     };
 
     /**
+     *  判断GPS模块是否开启，如果没有则开启
+     */
+    private void initGPS() {
+        LocationManager locationManager = (LocationManager) this
+                .getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager
+                .isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
+
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.setMessage("Positioning needs GPS, please open GPS.");
+            dialog.setPositiveButton("OK",
+                    new android.content.DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            // 转到手机设置界面，用户设置GPS
+                            Intent intent = new Intent(
+                                    Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            startActivityForResult(intent, 0); // 设置完成后返回到原来的界面
+
+                        }
+                    });
+            dialog.setNeutralButton("Cancel", new android.content.DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    arg0.dismiss();
+                }
+            } );
+            dialog.show();
+        }
+    }
+
+
+    /**
      * 标记点击事件监听
      * @param marker
      * @return
@@ -697,7 +734,7 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
      * @param playText
      */
     public void transLateText(final String playText) {
-        TransLaterUtilts.getData(getBaseContext(),playText,new TransLateresults() {
+        TransLaterUtilts.getData(getBaseContext(),playText,new TransLatorCallback() {
             @Override
             public void setPropety(TranslateResultModel resultModel) {
                 regeoMarker.setTitle("目标位置/TargetPosition");

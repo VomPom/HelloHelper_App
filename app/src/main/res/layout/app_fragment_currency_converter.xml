@@ -70,7 +70,8 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:inputType="number"
-                android:text="1" />
+                android:hint="  number"
+                />
 
         </RelativeLayout>
 

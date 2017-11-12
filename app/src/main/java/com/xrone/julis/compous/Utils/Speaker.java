@@ -1,5 +1,6 @@
 package com.xrone.julis.compous.Utils;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,6 +33,7 @@ import java.util.LinkedHashMap;
 public class Speaker {
     public static final int ENGLISH_TYPE=1;
     public static final int CHINESE_TYPE=2;
+    private ProgressDialog progressDialog;
     private SpeechSynthesizer mTts;
     Context context;
     public Speaker(Context context) {
@@ -58,6 +60,9 @@ public class Speaker {
     }
     /***********语音合成*************/
     public void init(Context context) {
+        progressDialog=new ProgressDialog(context);
+        progressDialog.setMessage("Synthetic speech is being synthesized...");
+
         //1.创建SpeechSynthesizer对象, 第二个参数：本地合成时传InitListener
         mTts = SpeechSynthesizer.createSynthesizer(context, null);
         //2.合成参数设置，详见《科大讯飞MSC API手册(Android)》SpeechSynthesizer 类
@@ -71,12 +76,15 @@ public class Speaker {
         //如果不需要保存合成音频，注释该行代码
     }
     public void startSpeaking(String speechText){
+        progressDialog.show();
         mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./sdcard/iflytek.pcm");
         //3.开始合成
         mTts.startSpeaking("" + speechText, new com.iflytek.cloud.SynthesizerListener() {
+
             //开始播放
             @Override
             public void onSpeakBegin() {
+               progressDialog.dismiss();
 
             }
 

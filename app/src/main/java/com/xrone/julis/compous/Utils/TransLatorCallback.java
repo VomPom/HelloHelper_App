@@ -1,5 +1,6 @@
 package com.xrone.julis.compous.Utils;
 
+import android.app.ProgressDialog;
 import android.util.Log;
 
 import com.android.volley.Response;
@@ -13,7 +14,9 @@ import org.json.JSONObject;
  * Created by Julis on 2017/10/28.
  */
 
-public abstract class TransLateresults implements Response.Listener<String>{
+public abstract class TransLatorCallback implements Response.Listener<String>{
+
+    private ProgressDialog progressDialog;
     TranslateResultModel resultModel = new TranslateResultModel();
     @Override
     public void onResponse(String s) {

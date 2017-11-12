@@ -3,11 +3,8 @@ package com.xrone.julis.compous;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.ContentResolver;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -16,16 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.baidu.mobstat.SendStrategyEnum;
 import com.baidu.mobstat.StatService;
 import com.xrone.julis.compous.Utils.BottomNavigationViewHelper;
 import com.xrone.julis.compous.Utils.CheckVersion;
 import com.xrone.julis.compous.Utils.Utils;
-import com.xrone.julis.compous.Service.SmsObserver;
 import com.xrone.julis.compous.view.application.exchangeRate.Data.Global_Data;
 import com.xrone.julis.compous.view.application.ApplicationFragment;
 import com.xrone.julis.compous.view.HomeFragment.HomeFragment;
-import com.xrone.julis.compous.view.HomeFragment.banner.PersonFragment;
+import com.xrone.julis.compous.view.HomeFragment.PersonFragment;
 import com.xrone.julis.compous.model.Hello;
 
 import java.util.ArrayList;
@@ -41,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
 
     private CheckVersion checkVersion=new CheckVersion(this);
-
 
 
     /**

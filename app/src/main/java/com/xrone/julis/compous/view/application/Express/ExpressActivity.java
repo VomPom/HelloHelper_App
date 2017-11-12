@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -95,7 +96,9 @@ public class ExpressActivity extends Activity{
             public void onClick(View v) {
                 StatService.onEvent(ExpressActivity.this, "expressSubmit", "expressSubmit", 1);
                 if(TextUtils.isEmpty(ed_message.getText().toString())){
-                    Toast.makeText(getBaseContext(),getString(R.string.app_expreess_tip_noInput),Toast.LENGTH_LONG).show();
+
+                     Snackbar.make(btn_submit, getString(R.string.app_expreess_tip_noInput), Snackbar.LENGTH_SHORT)
+                            .show();
                 }else{
                     sendAndgetExpressInformation();
                 }

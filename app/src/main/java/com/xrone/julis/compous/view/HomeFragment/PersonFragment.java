@@ -1,4 +1,4 @@
-package com.xrone.julis.compous.view.HomeFragment.banner;
+package com.xrone.julis.compous.view.HomeFragment;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -18,6 +18,7 @@ import com.loopj.android.image.SmartImageView;
 import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.Utils;
+import com.xrone.julis.compous.view.application.Feedback_Activity;
 import com.xrone.julis.compous.view.person.PersonInfoView;
 import com.xrone.julis.compous.view.LoginAndRegister.LoginActivity;
 
@@ -33,9 +34,11 @@ public class PersonFragment extends Fragment implements View.OnClickListener {
     private TextView tvName;
     private RelativeLayout view_user=null;
     private RelativeLayout quit=null;
+    private RelativeLayout feedback=null;
     private ImageView sex;
     private TextView idView;
     private SmartImageView headImage;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view=null;
@@ -52,6 +55,8 @@ public class PersonFragment extends Fragment implements View.OnClickListener {
         view_user = (RelativeLayout) view.findViewById(R.id.person_information);
         quit=(RelativeLayout)view.findViewById(R.id.person_quit);
         quit.setOnClickListener(this);
+        feedback=(RelativeLayout)view.findViewById(R.id.person_feedback);
+        feedback.setOnClickListener(this);
         view_user.setOnClickListener(this);
         Map<String, String> userInfo = Utils.getUserInfo(getActivity().getBaseContext());
         String head_URL=userInfo.get("head_url");
@@ -88,6 +93,7 @@ public class PersonFragment extends Fragment implements View.OnClickListener {
                       startActivity(intent);
                 }
                 break;
+
             case R.id.person_quit:
                 SharedPreferences sp=getActivity().getSharedPreferences("data",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor=sp.edit();
@@ -99,6 +105,10 @@ public class PersonFragment extends Fragment implements View.OnClickListener {
                 headImage.setImageUrl(DEFAULT_HEAD_URL,R.drawable.person_default_head,R.drawable.person_default_head);
                 idView.setText("ID:000000");
                 tvName.setText("null");
+                break;
+            case R.id.person_feedback:
+                Intent intent =new Intent(getActivity(),Feedback_Activity.class);
+                startActivity(intent);
                 break;
         }
 
