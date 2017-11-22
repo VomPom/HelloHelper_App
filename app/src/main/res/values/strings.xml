@@ -99,4 +99,34 @@
         \n\tEmail: 1607637473@qq.com\n\n\n\n\n.
 
     </string>
+
+    <!--交流社区-->
+    <string name="tab_top">置顶</string>
+    <string name="tab_all">全部</string>
+    <string name="tab_good">精华</string>
+    <string name="tab_unknown">未知</string>
+    <string name="tab_share">分享</string>
+    <string name="tab_ask">问答</string>
+    <string name="tab_job">招聘</string>
+    <string name="tab_dev">测试</string>
+
+
+    <string name="author">作者</string>
+    <string name="topic__">话题：%s</string>
+    <string name="__floor">%d楼</string>
+    <string name="reply___floor">回复：%d楼</string>
+    <string name="create_at__">创建于：%s</string>
+    <string name="score__">积分：%d</string>
+    <string name="register_time__">注册时间：%s</string>
+    <string name="__create">%s创建</string>
+    <string name="__count_visit">%d次浏览</string>
+    <string name="__count_reply">%d条回复</string>
+    <string name="_slash_">/</string>
+    <string name="_dot_">•</string>
+    <string name="no_reply">暂无回复</string>
+
+    <string name="no_market_install_in_system">系统中没有安装应用商店</string>
+    <string name="no_browser_install_in_system">系统中没有安装浏览器</string>
+    <string name="no_email_client_install_in_system">系统中没有安装邮件客户端</string>
+
 </resources>

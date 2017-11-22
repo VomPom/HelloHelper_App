@@ -44,7 +44,7 @@
     <string name="takePhoto">Photograph</string>
     <string name="tanslate">Tanslate</string>
     <string name="transl">Tran</string>
-    <string name="translate">Tanslator</string>
+    <string name="translate">Translator</string>
     <string name="activity">Activity</string>
     <string name="reply">Reply</string>
     <string name="collection">Collection</string>
@@ -86,4 +86,8 @@
     <string name="app_expreess_tip_noInput">Please input the message</string>
     <string name="chEnArticle">Culture Learning</string>
 
+    <string name="create_at__">%sMade at</string>
+    <string name="tab_top">Top</string>
+    <string name="tab_all">All</string>
+    <string name="tab_good">Good</string>
 </resources>

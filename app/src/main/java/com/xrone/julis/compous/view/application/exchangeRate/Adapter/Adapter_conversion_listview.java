@@ -65,9 +65,7 @@ public class Adapter_conversion_listview extends BaseAdapter{
 			holder.imageView= (ImageView) convertView.findViewById(R.id.imageView);
 			convertView.setTag(holder);
 		} else {
-
 			holder = (View_Holder) convertView.getTag();
-
 		}
 
 		if(Global_Data.android_version>=5.0) {
@@ -145,8 +143,7 @@ public class Adapter_conversion_listview extends BaseAdapter{
 
 	}
 
-	static class View_Holder
-	{
+	static class View_Holder {
 
 		public TextView short_title;
 		public ImageView imageView;

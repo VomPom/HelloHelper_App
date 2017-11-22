@@ -2,13 +2,13 @@ package com.xrone.julis.compous.view.application;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -19,7 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.MyAlert;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,11 +51,17 @@ public class Feedback_Activity extends Activity {
             public void onClick(View v) {
                 dialog.show();
                 final String text=ed_message.getText().toString().trim();
-               StringRequest request=new StringRequest(Request.Method.POST, StringURL.FEEDBACK_URL, new Response.Listener<String>() {
+               StringRequest request=new StringRequest(Request.Method.POST, AppURL.FEEDBACK_URL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
                         dialog.dismiss();
-                        MyAlert.showSuccess(Feedback_Activity.this);
+                        MyAlert.AlertWithOK(Feedback_Activity.this, "Success",
+                                "Thanks for your help.", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                });
                     }
                 }, new Response.ErrorListener() {
                     @Override

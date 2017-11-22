@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.xrone.julis.compous.R;
+import com.xrone.julis.compous.model.TranslateResultModel;
 import com.xrone.julis.compous.view.application.map.MapActivity;
 import com.xrone.julis.compous.view.application.map.navigation.WalkRouteCalculateActivity;
 
@@ -59,29 +60,14 @@ public abstract class MyAlert {
         isToNavigationAlert.show();
     }
 
-    public static void notFinished(Context context){
-        AlertDialog isToNavigationAlert = new AlertDialog.Builder(context).create();
-        isToNavigationAlert.setTitle("Developing...");
-        isToNavigationAlert.setMessage("Thanks for your corperation.");
-        isToNavigationAlert.setButton(DialogInterface.BUTTON_POSITIVE, context.getString(R.string.ok), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        isToNavigationAlert.show();
+    public static void AlertWithOK(Context context, String title, String content, DialogInterface.OnClickListener listener){
+        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(content);
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, context.getString(R.string.ok),listener);
+        alertDialog.show();
     }
 
-    public static void showSuccess(Context context){
-        AlertDialog isToNavigationAlert = new AlertDialog.Builder(context).create();
-        isToNavigationAlert.setTitle("Success");
-        isToNavigationAlert.setMessage("Thanks for your help.");
-        isToNavigationAlert.setButton(DialogInterface.BUTTON_POSITIVE, context.getString(R.string.ok), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        isToNavigationAlert.show();
-    }
 
     public static void showErrorMessage(Context context, String title, String content){
         AlertDialog isToNavigationAlert = new AlertDialog.Builder(context).create();
@@ -89,5 +75,7 @@ public abstract class MyAlert {
         isToNavigationAlert.setMessage(content);
         isToNavigationAlert.show();
     }
+
+
 
 }

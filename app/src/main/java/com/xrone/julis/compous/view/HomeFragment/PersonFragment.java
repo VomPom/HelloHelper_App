@@ -24,7 +24,7 @@ import com.xrone.julis.compous.view.LoginAndRegister.LoginActivity;
 
 import java.util.Map;
 
-import static com.xrone.julis.compous.model.StringURL.DEFAULT_HEAD_URL;
+import static com.xrone.julis.compous.StringData.AppURL.DEFAULT_HEAD_URL;
 
 /**
  * Created by Julis on 17/6/10.

@@ -9,11 +9,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-import com.xrone.julis.compous.MainActivity;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.update.CommonDialog;
 import com.xrone.julis.compous.Utils.update.UpdateService;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
+import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.model.UpdateBean;
 
 import org.json.JSONArray;
@@ -67,7 +67,7 @@ public class CheckVersion {
         /**
          * 请求数据库更新请求
          */
-        HttpUtils.getNewsJSON(StringURL.CHECKUPDATE_URL,updateHandler);
+        HttpUtils.getNewsJSON(AppURL.CHECKUPDATE_URL,updateHandler);
     }
 
     /**
@@ -81,7 +81,8 @@ public class CheckVersion {
         //getPackageName()是你当前类的包名，0代表是获取版本信息
         PackageInfo packInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
         int versionCode = packInfo.versionCode;//获取当前版本号
-
+        Hello.versionName=packInfo.versionName;
+        Hello.versionCode=packInfo.versionCode;
         System.out.println("版本号为："+versionCode);
         System.out.println("服务器版本号为："+updateBean.getVersionCode());
 

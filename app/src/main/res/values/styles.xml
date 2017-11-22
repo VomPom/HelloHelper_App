@@ -71,6 +71,21 @@
         parent="@android:style/TextAppearance">
         <item name="android:textColor">@android:color/transparent</item>
     </style>
+    <!--交流-->
+    <!-- App Widget -->
 
+    <style name="AppWidget" parent="Theme.AppCompat.Light" />
+    <!--交流-->
+    <style name="AppWidget.DeepLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
 
+    <style name="AppWidget.ShadowGap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/shadow_gap_elevation</item>
+        <item name="android:layout_marginBottom">@dimen/shadow_gap_margin_fill</item>
+        <item name="android:background">@drawable/gap_shadow</item>
+    </style>
 </resources>

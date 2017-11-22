@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="com.xrone.julis.compous">
 
 
     <application
+
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
@@ -24,9 +26,9 @@
             android:value="Baidu Market" />
 
         <!-- 是否开启错误日志统计，默认为false -->
-        <meta-data
-            android:name="BaiduMobAd_EXCEPTION_LOG"
-            android:value="true" />
+      <meta-data
+          android:name="BaiduMobAd_EXCEPTION_LOG"
+          android:value="true" />
         <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
         <meta-data
             android:name="BaiduMobAd_SEND_STRATEGY"
@@ -81,10 +83,9 @@
       <activity android:name=".view.application.Express.WalkRouteActivity"/>
       <activity android:name=".view.application.Express.WalkRouteDetailActivity"/>
       <activity android:name=".view.application.article.ArticleAcvitity"/>
-        <activity
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme"
-            android:name=".view.application.translate.Translate"/>
+      <activity android:name=".view.application.translate.Translate"/>
+      <activity android:name=".view.HomeFragment.communication.TopicActivity"/>
+      <!--<activity android:name=".view.application.communicatCommunicationActivitytion"/>-->
 
       <service  android:name="com.amap.api.location.APSService"></service>
 
@@ -107,19 +108,17 @@
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
   <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="android.permission.READ_CONTACTS" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.RECEIVE_SMS" />
   <uses-permission android:name="android.permission.READ_SMS" />
-  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
   <uses-permission android:name="android.permission.GET_TASKS" />
   <uses-permission android:name="android.permission.BLUETOOTH" />
   <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />

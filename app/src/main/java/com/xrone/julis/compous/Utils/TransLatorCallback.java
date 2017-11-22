@@ -16,7 +16,6 @@ import org.json.JSONObject;
 
 public abstract class TransLatorCallback implements Response.Listener<String>{
 
-    private ProgressDialog progressDialog;
     TranslateResultModel resultModel = new TranslateResultModel();
     @Override
     public void onResponse(String s) {

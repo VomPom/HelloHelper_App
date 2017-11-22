@@ -9,7 +9,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
 
-import com.xrone.julis.compous.Utils.StringOfID;
+import com.xrone.julis.compous.StringData.StringOfID;
 import com.xrone.julis.compous.view.application.translate.TipViewController;
 import com.xrone.julis.compous.Utils.MD5;
 import com.xrone.julis.compous.view.application.translate.util.ReplaceABC;

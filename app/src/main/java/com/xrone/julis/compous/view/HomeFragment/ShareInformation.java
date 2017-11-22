@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.MainActivity;
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
 
 import org.json.JSONObject;
 
@@ -61,7 +61,7 @@ public class ShareInformation extends Activity implements View.OnClickListener {
                     obj.put("info", information);
                     obj.put("name", Hello.username);
                     // 创建url资源
-                    URL url = new URL(StringURL.SHARE_URL);
+                    URL url = new URL(AppURL.SHARE_URL);
                     // 建立http连接
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     // 设置允许输出

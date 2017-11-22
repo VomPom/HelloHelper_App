@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
          * 主控制界面
          */
 
+
         mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
@@ -103,7 +104,9 @@ public class MainActivity extends AppCompatActivity {
         initData();
         initView();
         initFunction();
+
     }
+
 
     /**
      * 初始化界面

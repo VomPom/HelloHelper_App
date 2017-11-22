@@ -2,16 +2,12 @@ package com.xrone.julis.compous.view.application.Express;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.location.LocationManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
@@ -37,7 +33,8 @@ import com.android.volley.toolbox.Volley;
 import com.baidu.mobstat.StatService;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.MyAlert;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
+import com.xrone.julis.compous.view.application.translate.Translate;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,22 +43,23 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by Julis on 17/6/12.
  */
 
 public class ExpressActivity extends Activity{
 
-    private TextView btn_submit;
-    private TextView btn_clear;
-    private TextView btn_paste;
-    private EditText ed_message;
-
-
+    @BindView(R.id.btn_express_commit) TextView btn_submit;
+    @BindView(R.id.btn_express_clear)  TextView btn_clear;
+    @BindView(R.id.btn_express_paste)  TextView btn_paste;
+    @BindView(R.id.et_express_message) EditText ed_message;
     private double deslatitude;
     private double deslongitude;
     private ProgressDialog pDialog;
-
 
     /**
      * 地图
@@ -76,44 +74,39 @@ public class ExpressActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_activity_find_express);
         StatService.onEvent(ExpressActivity.this, "express", "express", 1);
-        initViews();
+        init();
+        ButterKnife.bind(this);
         initGPS();
+
     }
-    public void initViews(){
-        btn_clear=(TextView) findViewById(R.id.btn_express_clear);
-        btn_submit=(TextView)findViewById(R.id.btn_express_commit);
-        btn_paste=(TextView)findViewById(R.id.btn_express_paste);
-        ed_message=(EditText)findViewById(R.id.et_express_message);
-        pDialog=new ProgressDialog(ExpressActivity.this);
-        btn_clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+    @OnClick({
+            R.id.btn_express_clear,R.id.btn_express_commit,R.id.btn_express_paste
+    })
+    public void onClick(TextView view){
+        switch (view.getId()){
+            case R.id.btn_express_clear:
                 ed_message.setText("");
-            }
-        });
-        btn_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StatService.onEvent(ExpressActivity.this, "expressSubmit", "expressSubmit", 1);
-                if(TextUtils.isEmpty(ed_message.getText().toString())){
-
-                     Snackbar.make(btn_submit, getString(R.string.app_expreess_tip_noInput), Snackbar.LENGTH_SHORT)
-                            .show();
-                }else{
-                    sendAndgetExpressInformation();
-                }
-
-            }
-        });
-        btn_paste.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClipboardManager clipboardManager= (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                if(clipboardManager.getText()!=null){
-                    ed_message.setText(clipboardManager.getText().toString());
-                }
-            }
-        });
+                break;
+            case R.id.btn_express_paste:
+                    ClipboardManager clipboardManager= (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    if(clipboardManager.getText()!=null){
+                        ed_message.setText(clipboardManager.getText().toString());
+                    }
+                break;
+            case R.id.btn_express_commit:
+                    StatService.onEvent(ExpressActivity.this, "expressSubmit", "expressSubmit", 1);
+                    if(TextUtils.isEmpty(ed_message.getText().toString())){
+                        Snackbar.make(btn_submit, getString(R.string.app_expreess_tip_noInput), Snackbar.LENGTH_SHORT)
+                                .show();
+                    }else{
+                        sendAndgetExpressInformation();
+                    }
+                break;
+        }
+    }
+    public void init(){
+        pDialog=new ProgressDialog(ExpressActivity.this);
     }
 
     /**
@@ -158,7 +151,7 @@ public class ExpressActivity extends Activity{
     public void sendAndgetExpressInformation(){
         pDialog.setMessage("Finding...");
         pDialog.show();
-        StringRequest findRequest =new StringRequest(Request.Method.POST,StringURL.GET_EXPRESS_INFO_URL, new Response.Listener<String>() {
+        StringRequest findRequest =new StringRequest(Request.Method.POST, AppURL.GET_EXPRESS_INFO_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
                 try {
@@ -172,8 +165,17 @@ public class ExpressActivity extends Activity{
                     }
                 } catch (JSONException e) {
                     pDialog.dismiss();
-                    MyAlert.showErrorMessage(ExpressActivity.this,"Sorry！Not Found！","Please check whether the message is the Express notification information\n" +
-                            "If it is, we will complete it.\nThanks for your cooperation.");
+                    MyAlert.AlertWithOK(ExpressActivity.this,"Sorry！Not Found！",
+                            "Please check whether the message is the Express notification information\n" +
+                            "If it is, we will complete it.\nThanks for your cooperation.",
+                            new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent=new Intent(ExpressActivity.this, Translate.class);
+                            intent.putExtra("text",ed_message.getText().toString());
+                            startActivity(intent);
+                        }
+                    });
                     e.printStackTrace();
                 }
             }
@@ -193,7 +195,7 @@ public class ExpressActivity extends Activity{
             }
         };
 
-        StringRequest insertQueryInfo = new StringRequest(Request.Method.POST, StringURL.GET_EXPRESS_INFO_URL, new Response.Listener<String>() {
+        StringRequest insertQueryInfo = new StringRequest(Request.Method.POST, AppURL.GET_EXPRESS_INFO_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
 

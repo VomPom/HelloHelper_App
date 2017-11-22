@@ -8,6 +8,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.xrone.julis.compous.StringData.StringOfID;
 import com.xrone.julis.compous.view.application.translate.util.ReplaceABC;
 import com.xrone.julis.compous.view.application.translate.util.UrlString;
 
@@ -51,6 +52,7 @@ public class TransLaterUtilts {
         mQueue.add(stringRequest);
 
     }
+
     static class VolleyResponseError implements Response.ErrorListener{
         @Override
         public void onErrorResponse(VolleyError volleyError) {

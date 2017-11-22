@@ -1,4 +1,4 @@
-package com.xrone.julis.compous.model;
+package com.xrone.julis.compous.StringData;
 
 /**
  * Created by Julis on 17/6/16.
@@ -7,7 +7,7 @@ package com.xrone.julis.compous.model;
 /**
  * 链接地址的常量
  */
-public class StringURL {
+public class AppURL {
 
 //
 //    public static final String GET_NEWS_URL="http://10.130.251.23/hello/getJSONinfomation.php";
@@ -56,11 +56,17 @@ public class StringURL {
      *获取快递点信息
      */
     public static final String GET_EXPRESS_PLACES_URL =WEBSITE+"/hello/getExpressPlaces.php";
-
-
     /**
      * 反馈页面网址
      */
     public static final String FEEDBACK_URL=WEBSITE+"/hello/feedback.php";
+    /**
+     * 获取评论主页
+     */
+    public static final String TOPIC_URL=WEBSITE+"/hello/commucation/getTopic.php";
+    /**
+     * 获取评论
+     */
+    public static final String COMMENT_URL=WEBSITE+"/hello/commucation/getComment.php";
 
 }

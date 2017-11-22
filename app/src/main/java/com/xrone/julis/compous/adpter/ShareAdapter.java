@@ -56,7 +56,7 @@ public class ShareAdapter extends BaseAdapter {
             tvName.setText(list.getName());
             tvTime.setText(list.getTime());
             tvInfor.setText(list.getInfo());
-           ivHead.setImageUrl(list.getHeadurl(),R.drawable.head,R.drawable.head);
+            ivHead.setImageUrl(list.getHeadurl(),R.drawable.head,R.drawable.head);
      //  }
         //HttpUtils.setPicBitmap(ivHead,list.getHeadurl());
         return convertView;

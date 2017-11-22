@@ -49,7 +49,7 @@ import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.HttpUtils;
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
 import com.xrone.julis.compous.Utils.TransLatorCallback;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
 
 import com.xrone.julis.compous.model.TranslateResultModel;
 import com.xrone.julis.compous.view.application.map.navigation.WalkRouteCalculateActivity;
@@ -135,7 +135,7 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         initViews();
         init();
         Log.e("tttt","执行了11");
-        HttpUtils.getNewsJSON(StringURL.GET_EXPRESS_PLACES_URL, handler);
+        HttpUtils.getNewsJSON(AppURL.GET_EXPRESS_PLACES_URL, handler);
         Log.e("tttt","执行了22222");
         initGPS();
     }

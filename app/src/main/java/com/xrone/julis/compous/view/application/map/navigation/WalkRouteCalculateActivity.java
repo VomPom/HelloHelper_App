@@ -13,7 +13,7 @@ import com.amap.api.navi.model.NaviLatLng;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.MyAlert;
 import com.xrone.julis.compous.Utils.Speaker;
-import com.xrone.julis.compous.Utils.StringOfID;
+import com.xrone.julis.compous.StringData.StringOfID;
 import com.xrone.julis.compous.view.application.map.MapActivity;
 import com.xrone.julis.compous.Utils.MD5;
 import com.xrone.julis.compous.view.application.translate.util.ReplaceABC;

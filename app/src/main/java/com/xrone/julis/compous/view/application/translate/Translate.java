@@ -57,8 +57,10 @@ public class Translate extends Activity {
     private TextView textViewResult;
     private ProgressBar progressBar;
     private Speaker speaker;
+
     SpeechSynthesizer mTts;
     private ImageView voice;
+    private ImageView btn_share;
     private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
     private StringBuilder sb = new StringBuilder();
     @Override
@@ -80,6 +82,7 @@ public class Translate extends Activity {
         btn_Clear.setVisibility(View.INVISIBLE);
         progressBar = (ProgressBar)findViewById(R.id.progress_bar);
         voice=(ImageView)findViewById(R.id.btn_voice);
+        btn_share=(ImageView)findViewById(R.id.btn_share);
         viewResult = findViewById(R.id.include);
         textViewResult = (TextView)findViewById(R.id.text_view_output);
         button = (AppCompatButton) findViewById(R.id.buttonTranslate);
@@ -133,7 +136,7 @@ public class Translate extends Activity {
         });
 
 
-        viewResult.findViewById(R.id.btn_share).setOnClickListener(new View.OnClickListener() {
+        btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -142,9 +145,12 @@ public class Translate extends Activity {
                         "From:\n"+editText.getText().toString()+"\n"
                                 +"To:\n"+textViewResult.getText().toString()
                                 +"\n----From HelloHelper.");
-                startActivity(Intent.createChooser(intent,"Choos application to Share."));
+               startActivity(Intent.createChooser(intent,"Choos application to Share."));
             }
         });
+
+
+
 
         viewResult.findViewById(R.id.btn_copy).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,6 +161,7 @@ public class Translate extends Activity {
                 Snackbar.make(button,"Copy success!" +
                         "",Snackbar.LENGTH_SHORT)
                         .show();
+
             }
         });
         voice.setOnClickListener(new View.OnClickListener() {
@@ -233,7 +240,8 @@ public class Translate extends Activity {
         });
 
         mDialog.setUILanguage(Locale.US);
-        mDialog.setParameter(SpeechConstant.LANGUAGE, "en_us");
+       // mDialog.setParameter(SpeechConstant.LANGUAGE, "en_us");
+
         mDialog.setListener(new RecognizerDialogListener() {
             @Override
             public void onResult(com.iflytek.cloud.RecognizerResult recognizerResult, boolean b) {
@@ -241,7 +249,7 @@ public class Translate extends Activity {
             }
             @Override
             public void onError(SpeechError speechError) {
-
+                Log.e("tt","gs");
             }
         });
         mDialog.show();
@@ -273,7 +281,6 @@ public class Translate extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        this.finish();
         if(mTts!=null){
             mTts.destroy();
         }
@@ -283,7 +290,6 @@ public class Translate extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
-        this.finish();
         if(mTts!=null){
             mTts.destroy();
         }

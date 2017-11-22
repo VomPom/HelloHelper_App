@@ -1,204 +1,128 @@
 package com.xrone.julis.compous.view.HomeFragment;
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.KeyEvent;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-import com.xrone.julis.compous.model.Hello;
-import com.xrone.julis.compous.model.UserInformation;
-import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.model.StringURL;
-import com.xrone.julis.compous.adpter.ShareAdapter;
-import com.xrone.julis.compous.Utils.HttpUtils;
-import com.xrone.julis.compous.view.LoginAndRegister.LoginActivity;
-import com.xrone.julis.compous.view.application.translate.Translate;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import java.util.ArrayList;
+import com.xrone.julis.compous.R;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Tab;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Topic;
+import com.xrone.julis.compous.view.HomeFragment.communication.Presenter.MainPresenter;
+import com.xrone.julis.compous.view.HomeFragment.communication.adapter.TopicListAdapter;
+import com.xrone.julis.compous.view.HomeFragment.communication.listener.FloatingActionButtonBehaviorListener;
+import com.xrone.julis.compous.view.HomeFragment.communication.listener.IMainPresenter;
+import com.xrone.julis.compous.view.HomeFragment.communication.view.IBackToContentTopView;
+import com.xrone.julis.compous.view.HomeFragment.communication.view.IMainView;
+
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Julis on 17/6/11.
  * 首页页面
  */
-public class HomeFragment extends Fragment implements AdapterView.OnItemClickListener {
-    private ImageView voice;
-    private EditText editText;
-    private Button fanyi;
-    private FloatingActionButton shareBtn;
-    private ListView sharelistview;
+public class HomeFragment extends Fragment  implements IMainView,SwipeRefreshLayout.OnRefreshListener,IBackToContentTopView {
+    @BindView(R.id.recycler_view)
+    RecyclerView recyclerView;
+    @BindView(R.id.refresh_layout)
+    SwipeRefreshLayout refreshLayout;
+    private TopicListAdapter adapter;
+    private IMainPresenter mainPresenter;
+    private int page = 0;
 
-    //Banner banner;
-    private ShareAdapter shareAdapter;
-    private List<UserInformation> informations = new ArrayList<>();
-
-    public static List<?> images=new ArrayList<>();
-    private String[] urls;
-    private String[] tips ;
+    @BindView(R.id.fab_create_topic)
+    FloatingActionButton fabCreateTopic;
+    //private LoadMoreFooter loadMoreFooter;
 
     @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    public Handler getShareHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            String jsonData = (String) msg.obj;
-            informations.clear();
-            try {
-                //获取Json数组里面的值，并加入到Information对象里面去
-                JSONArray jsonArray = new JSONArray(jsonData);
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject object = jsonArray.getJSONObject(i);
-                    String info = object.getString("info");
-                    String name = object.getString("name");
-                    String head_url = object.getString("head_url");
-                    String time = object.getString("time");
-                    informations.add(new UserInformation(name, info, time, head_url));
-                }
-                shareAdapter.notifyDataSetChanged();
-            } catch (JSONException e) {
-                e.printStackTrace();
-
-            }
-        }
-    };
-
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        Log.e("view","view创建");
-        initViews();
-        initDatas();
-    }
-
-    public void initDatas(){
-
-        HttpUtils.getNewsJSON(StringURL.GET_NEWS_URL, getShareHandler);
-
-      //  urls=getResources().getStringArray(R.array.url);
-      //  tips=getResources().getStringArray(R.array.title);;
-      //  List list = Arrays.asList(urls);
-       // List list2 = Arrays.asList(tips);
-        //images = new ArrayList(list);
-//        banner.setImages(images)
-//                .setBannerTitles(list2)
-//                .setImageLoader(new GlideImageLoader())
-//                .start();
-    }
-
-    public void initViews(){
-        shareBtn = (FloatingActionButton) getActivity().findViewById(R.id.share_floatBtn);
-        voice = (ImageView) getActivity().findViewById(R.id.home_iv_voice);
-        editText = (EditText) getActivity().findViewById(R.id.home_ed_text);
-        fanyi = (Button) getActivity().findViewById(R.id.home_btn_fanyi);
-     //   banner = (Banner)getActivity().findViewById(R.id.banner);
-
-        voice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Translate.class);
-                intent.putExtra("text", "order");
-                startActivity(intent);
-            }
-        });
-
-
-        shareBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Hello.isLogin == true) {
-                    Intent intent = new Intent(getActivity(), ShareInformation.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(getActivity(), LoginActivity.class);
-                    intent.putExtra("order","share");
-                    startActivity(intent);
-                }
-            }
-        });
-
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                return (event.getKeyCode()==KeyEvent.KEYCODE_ENTER);
-            }
-        });
-
-
-        editText.setOnKeyListener(new View.OnKeyListener(){
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                boolean flag=false;
-                if(keyCode == KeyEvent.KEYCODE_ENTER&&event.getAction()==KeyEvent.ACTION_UP){
-                    if (editText.getText().toString().equals("")) {
-                        flag=true;
-                        Toast.makeText(getActivity(), "请输入要翻译的内容！\n" +
-                                "Please enter what you want to translate!", Toast.LENGTH_SHORT).show();
-
-
-                    }else {
-                        Intent intent = new Intent(getActivity(), Translate.class);
-                        intent.putExtra("text", editText.getText().toString());
-                        editText.setSelection(editText.getText().toString().length());
-                        startActivity(intent);
-                    }
-                }
-                return  flag;
-            }
-        });
-
-
-        fanyi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (editText.getText().toString().equals(""))
-                    Toast.makeText(getActivity(), "请输入要翻译的内容！\n" +
-                            "Please enter what you want to translate!", Toast.LENGTH_SHORT).show();
-                else {
-                    Intent intent = new Intent(getActivity(), Translate.class);
-                    intent.putExtra("text", editText.getText().toString());
-                    editText.setSelection(editText.getText().toString().length());
-                    startActivity(intent);
-                }
-            }
-        });
+    public void onDestroyView() {
+        super.onDestroyView();
 
     }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.home_activity, container, false);
-        sharelistview = (ListView) view.findViewById(R.id.lv_home_share);
-        shareAdapter = new ShareAdapter(this.getActivity(), informations);
-        sharelistview.setAdapter(shareAdapter);
-        sharelistview.setOnItemClickListener(this);
 
+        final View view = inflater.inflate(R.layout.com_activity_main,container,false);
+
+        ButterKnife.bind(this, view);
+
+        refreshLayout.setColorSchemeResources(R.color.bar_color);
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setRefreshing(true);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new TopicListAdapter(getActivity());
+        recyclerView.setAdapter(adapter);
+        mainPresenter = new MainPresenter(getActivity(), this,adapter);
+
+        recyclerView.addOnScrollListener(new FloatingActionButtonBehaviorListener.ForRecyclerView(fabCreateTopic));
+
+        onRefresh();
         return view;
     }
+
+
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.e("tag","被电击了");
+    public void onSwitchTabOk(@NonNull Tab tab) {
+        fabCreateTopic.show();
+    }
+
+    /**
+     * 刷新成功后，获取到新List列表
+     * @param topicList
+     */
+    @Override
+    public void onRefreshTopicListOk(@NonNull List<Topic> topicList) {
+        page = 1;
+        adapter.setTopicListWithNotify(topicList);
+        refreshLayout.setRefreshing(false);
+        //loadMoreFooter.setState(topicList.isEmpty() ? LoadMoreFooter.STATE_DISABLED : LoadMoreFooter.STATE_ENDLESS);
+
+    }
+
+    @Override
+    public void onRefreshTopicListError(@NonNull String message) {
+
+    }
+
+    @Override
+    public void onLoadMoreTopicListOk(@NonNull List<Topic> topicList) {
+
+    }
+
+    @Override
+    public void onLoadMoreTopicListError(@NonNull String message) {
+
+    }
+
+    @Override
+    public void updateUserInfoViews() {
+
+    }
+
+    @Override
+    public void updateMessageCountViews(int count) {
+
+    }
+
+    @Override
+    public void onRefresh() {
+        mainPresenter.refreshTopicListAsyncTask();
+    }
+
+    @Override
+    public void backToContentTop() {
+        recyclerView.scrollToPosition(0);
+        fabCreateTopic.show();
     }
 }
 

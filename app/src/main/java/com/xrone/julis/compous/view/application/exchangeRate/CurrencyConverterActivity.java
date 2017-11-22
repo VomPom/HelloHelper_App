@@ -239,8 +239,9 @@ public class CurrencyConverterActivity extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-              add_country_Result();
-                  pDialog.dismiss();
+            pDialog.dismiss();
+            add_country_Result();
+
 
         }
 

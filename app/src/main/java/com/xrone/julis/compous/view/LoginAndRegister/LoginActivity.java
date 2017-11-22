@@ -13,10 +13,10 @@ import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.xrone.julis.compous.StringData.AppURL;
 import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.MainActivity;
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.model.StringURL;
 import com.xrone.julis.compous.Utils.Utils;
 
 import org.apache.http.Header;
@@ -96,7 +96,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             RequestParams params = new RequestParams();
             params.add("username", username);
             params.add("password", password);
-            client.post(StringURL.LOGIN_URL, params, new AsyncHttpResponseHandler() {
+            client.post(AppURL.LOGIN_URL, params, new AsyncHttpResponseHandler() {
 
                 @Override
                 public void onSuccess(int i, Header[] headers, byte[] bytes) {

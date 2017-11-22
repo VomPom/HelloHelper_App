@@ -15,7 +15,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
 import com.xrone.julis.compous.Utils.Utils;
 
 import org.apache.http.Header;
@@ -102,7 +102,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
             params.add("username", username);
             params.add("password", password);
             params.add("sex", sex);
-            client.post(StringURL.REG_URL, params, new AsyncHttpResponseHandler() {
+            client.post(AppURL.REG_URL, params, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int i, Header[] headers, byte[] bytes) {
                     String response = new String(bytes);

@@ -55,7 +55,6 @@ public class Activity_conversion_listview extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog.setMessage("Please wait...");
-            pDialog.setCancelable(false);
             pDialog.show();
         }
 

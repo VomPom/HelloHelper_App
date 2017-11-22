@@ -12,7 +12,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
 
 /**
  * Created by Julis on 17/6/20.
@@ -63,7 +63,7 @@ public class Browser extends Activity {
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                view.loadUrl(StringURL.EXPRESS_URL);
+                view.loadUrl(AppURL.EXPRESS_URL);
                 return super.shouldOverrideUrlLoading(view, request);
 
             }

@@ -12,6 +12,8 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.xrone.julis.compous.R;
+import com.xrone.julis.compous.model.Hello;
+import com.xrone.julis.compous.view.application.exchangeRate.Data.Global_Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ import java.util.List;
 public class AboutUsActivity extends Activity {
     CollapsingToolbarLayout collapsingToolbar;
     private TextView textView;
+    private TextView version;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class AboutUsActivity extends Activity {
         collapsingToolbar=(CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle("COME ON WITH US!");
         textView=(TextView)findViewById(R.id.about_us_text);
+        version=(TextView)findViewById(R.id.app_about_version);
+        version.setText("Version:"+ Hello.versionName);
         textView.setText("Dear Friend:"+"\n"+"We are a team from Wenzhou University," +
                 " in order to help foreign students in China better life and learning, " +
                 "on the APP provides the express point query, exchange community, " +

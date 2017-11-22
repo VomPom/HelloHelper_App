@@ -18,7 +18,7 @@ import com.amap.api.navi.model.AimLessModeCongestionInfo;
 import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.NaviInfo;
 import com.autonavi.tbt.TrafficFacilityInfo;
-import com.xrone.julis.compous.Utils.StringOfID;
+import com.xrone.julis.compous.StringData.StringOfID;
 import com.xrone.julis.compous.Utils.MD5;
 import com.xrone.julis.compous.view.application.translate.util.ReplaceABC;
 import com.xrone.julis.compous.view.application.translate.util.UrlString;

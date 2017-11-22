@@ -1,4 +1,4 @@
-package com.xrone.julis.compous.Utils;
+package com.xrone.julis.compous.StringData;
 
 /**
  * Created by Julis on 2017/10/20.

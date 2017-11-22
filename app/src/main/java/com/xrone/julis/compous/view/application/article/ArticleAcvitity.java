@@ -13,7 +13,7 @@ import android.widget.ListView;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.Browser;
 import com.xrone.julis.compous.Utils.HttpUtils;
-import com.xrone.julis.compous.model.StringURL;
+import com.xrone.julis.compous.StringData.AppURL;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,7 +42,7 @@ public class ArticleAcvitity extends Activity implements AdapterView.OnItemClick
         articleAdapter=new ArticleAdapter(ArticleAcvitity.this,articleModels);
         listView.setAdapter(articleAdapter);
         listView.setOnItemClickListener(this);
-        HttpUtils.getNewsJSON(StringURL.APPINFORMATION_URL, getarticle);
+        HttpUtils.getNewsJSON(AppURL.APPINFORMATION_URL, getarticle);
     }
 
     public Handler getarticle = new Handler() {
