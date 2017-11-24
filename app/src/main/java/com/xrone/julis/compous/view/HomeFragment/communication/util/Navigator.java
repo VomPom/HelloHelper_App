@@ -9,8 +9,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.api.ApiDefine;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Topic;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.ApiDefine;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.Topic;
 import com.xrone.julis.compous.view.HomeFragment.communication.TopicActivity;
 
 

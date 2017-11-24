@@ -13,7 +13,6 @@ import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.view.application.Express.ExpressActivity;
 import com.xrone.julis.compous.view.application.about.AboutUsActivity;
 import com.xrone.julis.compous.view.application.article.ArticleAcvitity;
-import com.xrone.julis.compous.view.HomeFragment.communication.CommunicationActivity;
 import com.xrone.julis.compous.view.application.exchangeRate.CurrencyConverterActivity;
 import com.xrone.julis.compous.view.application.map.MapActivity;
 import com.xrone.julis.compous.view.application.translate.Translate;
@@ -125,8 +124,8 @@ public class ApplicationFragmentOLD extends Fragment{
             @Override
             public void onClick(View v) {
                 // MyAlert.notFinished(getActivity());
-                Intent i= new Intent(getActivity(),CommunicationActivity.class);
-                startActivity(i);
+//                Intent i= new Intent(getActivity(),CommunicationActivity.class);
+//                startActivity(i);
             }
         });
 

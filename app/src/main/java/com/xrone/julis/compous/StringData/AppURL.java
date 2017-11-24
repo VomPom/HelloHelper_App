@@ -69,4 +69,9 @@ public class AppURL {
      */
     public static final String COMMENT_URL=WEBSITE+"/hello/commucation/getComment.php";
 
+    /**
+     * 添加话题
+     */
+    public static final String ADDATOPIC_URL=WEBSITE+"/hello/commucation/addATopic.php";
+
 }

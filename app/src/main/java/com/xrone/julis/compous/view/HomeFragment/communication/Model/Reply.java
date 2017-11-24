@@ -1,8 +1,6 @@
 package com.xrone.julis.compous.view.HomeFragment.communication.Model;
 
 import com.google.gson.annotations.SerializedName;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.api.ApiDefine;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Author;
 import com.xrone.julis.compous.view.HomeFragment.communication.util.FormatUtils;
 
 

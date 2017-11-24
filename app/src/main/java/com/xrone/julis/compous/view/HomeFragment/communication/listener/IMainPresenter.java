@@ -2,7 +2,7 @@ package com.xrone.julis.compous.view.HomeFragment.communication.listener;
 
 import android.support.annotation.NonNull;
 
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Tab;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.Tab;
 
 
 public interface IMainPresenter {

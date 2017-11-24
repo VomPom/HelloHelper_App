@@ -1,4 +1,4 @@
-package com.xrone.julis.compous.view.HomeFragment.communication.Model.entity;
+package com.xrone.julis.compous.view.HomeFragment.communication.Model;
 
 import com.google.gson.annotations.SerializedName;
 

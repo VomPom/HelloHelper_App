@@ -1,9 +1,12 @@
 package com.xrone.julis.compous.view.LoginAndRegister;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +17,12 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.xrone.julis.compous.StringData.AppURL;
+import com.xrone.julis.compous.Utils.MyAlert;
 import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.MainActivity;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.Utils;
+import com.xrone.julis.compous.view.HomeFragment.ShareInformation;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -74,7 +79,27 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 break;
         }
     }
+    public static boolean checkLogin(@NonNull final Activity activity) {
 
+        if (Hello.isLogin){
+            return true;
+        }else{
+
+            MyAlert myAlert=new MyAlert(activity, "Tip", activity.getString(R.string.need_login_tip)){
+                @Override
+                public void onClickNo() {
+                }
+                @Override
+                public void onClickYes() {
+                    Intent intent = new Intent(activity, LoginActivity.class);
+                    activity.startActivity(intent);
+                }
+            };
+            myAlert.showMyAlert();
+            return false;
+        }
+
+    }
     /**
      * 登陆模块
      */
@@ -120,8 +145,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                             Utils.saveUserInfo(LoginActivity.this,Hello.id,username,password,Hello.sex,Hello.head_url);
                             Toast.makeText(LoginActivity.this,"登录成功！\n" +
                                     "Login successful!",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
+//
                             LoginActivity.this.finish();
                         }
                         else {

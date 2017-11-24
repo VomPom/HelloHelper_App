@@ -13,8 +13,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.xrone.julis.compous.StringData.AppURL;
 import com.xrone.julis.compous.view.HomeFragment.communication.Model.Reply;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Author;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.TopicWithReply;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.Author;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.TopicWithReply;
 import com.xrone.julis.compous.view.HomeFragment.communication.view.ITopicView;
 
 import org.joda.time.DateTime;
@@ -76,12 +76,19 @@ public class TopicPresenter implements ITopicPresenter {
                     JSONArray commentsJson = dataJson.getJSONArray("comments");
                     for (int j = 0; j < commentsJson.length(); j++){
                         JSONObject joo = commentsJson.optJSONObject(j);
+
                         Reply reply=new Reply();
                         Author authorReplay = new Author();
                         authorReplay.setLoginName(joo.getString("author_name"));
                         authorReplay.setAvatarUrl(joo.getString("author_head_url"));
-                        reply.setContent(joo.getString("content"));
                         reply.setAuthor(authorReplay);
+
+                        reply.setContent(joo.getString("content"));
+                        reply.setReplyId(joo.getString("reply_id"));
+                        reply.setId(joo.getString("id"));
+
+
+
 
                         String replyCreatetime=joo.getString("create_at");
                         DateTime replyCreateTime = DateTime.parse(replyCreatetime, format);

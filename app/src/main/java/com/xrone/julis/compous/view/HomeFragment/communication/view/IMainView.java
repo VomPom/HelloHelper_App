@@ -3,8 +3,8 @@ package com.xrone.julis.compous.view.HomeFragment.communication.view;
 import android.support.annotation.NonNull;
 
 
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Tab;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Topic;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.Tab;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.Topic;
 
 import java.util.List;
 

@@ -16,7 +16,7 @@ import android.view.MenuItem;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.view.HomeFragment.communication.HeaderAndFooterRecyclerView.HeaderAndFooterRecyclerView;
 import com.xrone.julis.compous.view.HomeFragment.communication.Model.Reply;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.TopicWithReply;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.TopicWithReply;
 import com.xrone.julis.compous.view.HomeFragment.communication.Presenter.ITopicPresenter;
 import com.xrone.julis.compous.view.HomeFragment.communication.Presenter.TopicPresenter;
 import com.xrone.julis.compous.view.HomeFragment.communication.adapter.ReplyListAdapter;
@@ -27,8 +27,9 @@ import com.xrone.julis.compous.view.HomeFragment.communication.util.Navigator;
 import com.xrone.julis.compous.view.HomeFragment.communication.view.IBackToContentTopView;
 import com.xrone.julis.compous.view.HomeFragment.communication.view.ITopicView;
 import com.xrone.julis.compous.view.HomeFragment.communication.view.TopicHeader;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Topic;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.Topic;
 import com.xrone.julis.compous.view.HomeFragment.communication.view.ICreateReplyView;
+import com.xrone.julis.compous.view.LoginAndRegister.LoginActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,8 +81,7 @@ public class TopicActivity extends StatusBarActivity implements ITopicView, IBac
 //        toolbar.inflateMenu(R.menu.topic);
 //        toolbar.setOnMenuItemClickListener(this);
 //        toolbar.setOnClickListener(new DoubleClickBackToContentTopListener(this));
-//
-         //createReplyView = CreateReplyDialog.createWithAutoTheme(this, topicId, this);
+//createReplyView = CreateReplyDialog.createWithAutoTheme(this, topicId, this);
 
 
 
@@ -91,7 +91,7 @@ public class TopicActivity extends StatusBarActivity implements ITopicView, IBac
         header.updateViews(topic, false, 0);
         adapter = new ReplyListAdapter(this, createReplyView);
         recyclerView.setAdapter(adapter);
-      recyclerView.addOnScrollListener(new FloatingActionButtonBehaviorListener.ForRecyclerView(fabReply));
+        recyclerView.addOnScrollListener(new FloatingActionButtonBehaviorListener.ForRecyclerView(fabReply));
 //
         topicPresenter = new TopicPresenter(this, this);
 
@@ -99,6 +99,11 @@ public class TopicActivity extends StatusBarActivity implements ITopicView, IBac
         refreshLayout.setOnRefreshListener(this);
         refreshLayout.setRefreshing(true);
         onRefresh();
+    }
+
+    @OnClick(R.id.fab_reply)
+    void onBtnReplyClick() {
+        LoginActivity.checkLogin(this);
     }
 
     @Override
@@ -119,12 +124,6 @@ public class TopicActivity extends StatusBarActivity implements ITopicView, IBac
         topicPresenter.getTopicAsyncTask(topicId);
     }
 
-    @OnClick(R.id.fab_reply)
-    void onBtnReplyClick() {
-//        if (topic != null && LoginActivity.checkLogin(this)) {
-//            createReplyView.showWindow();
-//        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

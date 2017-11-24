@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.xrone.julis.compous.view.HomeFragment.communication.widget.AdaptStatusBarView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 
     <android.support.design.widget.CoordinatorLayout
@@ -33,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:src="@drawable/btn_share"
+            app:backgroundTint="@color/green"
+            android:src="@drawable/com_mode_edit_white_24dp"
             app:fabSize="normal" />
 
     </android.support.design.widget.CoordinatorLayout>

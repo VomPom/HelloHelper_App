@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.view.HomeFragment.communication.util.Navigator;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.entity.Topic;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.Topic;
 import com.xrone.julis.compous.view.HomeFragment.communication.util.FormatUtils;
 
 

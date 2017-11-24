@@ -22,6 +22,14 @@
             android:weightSum="1">
 
             <EditText
+                android:id="@+id/topic_title"
+                android:layout_width="match_parent"
+                android:hint="Title"
+                android:lines="1"
+                android:maxLines="1"
+                android:maxLength="20"
+                android:layout_height="wrap_content" />
+            <EditText
                 android:layout_marginTop="15dp"
                 android:gravity="top"
                 android:id="@+id/et_share_infomation"
@@ -30,7 +38,7 @@
                 android:hint="SAY SOMETING..."
                 android:background="@color/white"
                 android:paddingLeft="20dp"
-                android:textColorHint="#DDDDDD"
+                android:textColorHint="@color/gray"
                 android:textSize="16sp"
                 android:layout_weight="1.95" />
             <LinearLayout

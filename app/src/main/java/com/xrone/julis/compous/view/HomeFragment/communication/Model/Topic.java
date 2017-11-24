@@ -1,10 +1,9 @@
-package com.xrone.julis.compous.view.HomeFragment.communication.Model.entity;
+package com.xrone.julis.compous.view.HomeFragment.communication.Model;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.gson.annotations.SerializedName;
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.api.ApiDefine;
 import com.xrone.julis.compous.view.HomeFragment.communication.util.FormatUtils;
 
 import org.joda.time.DateTime;

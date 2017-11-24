@@ -88,4 +88,10 @@
         <item name="android:layout_marginBottom">@dimen/shadow_gap_margin_fill</item>
         <item name="android:background">@drawable/gap_shadow</item>
     </style>
+
+    <style name="AppWidget.Gap">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">8dp</item>
+    </style>
 </resources>

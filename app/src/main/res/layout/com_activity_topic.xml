@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
+            app:backgroundTint="@color/green"
             android:src="@drawable/com_reply_white_24dp"
             app:fabSize="normal" />
         

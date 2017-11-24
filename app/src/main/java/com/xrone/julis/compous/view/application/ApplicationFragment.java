@@ -12,7 +12,6 @@ import android.widget.ImageView;
 
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.view.application.article.ArticleAcvitity;
-import com.xrone.julis.compous.view.HomeFragment.communication.CommunicationActivity;
 import com.xrone.julis.compous.view.application.Express.ExpressActivity;
 import com.xrone.julis.compous.view.application.about.AboutUsActivity;
 import com.xrone.julis.compous.view.application.exchangeRate.CurrencyConverterActivity;
@@ -80,7 +79,7 @@ public class ApplicationFragment extends Fragment{
                 intent= new Intent(context,AboutUsActivity.class);
                 break;
             case R.id.btn_test_Commucation:
-                intent= new Intent(context,CommunicationActivity.class);
+               // intent= new Intent(context,CommunicationActivity.class);
                 break;
         }
         startActivity(intent);

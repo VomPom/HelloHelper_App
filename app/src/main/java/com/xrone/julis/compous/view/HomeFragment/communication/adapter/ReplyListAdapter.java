@@ -1,10 +1,13 @@
 package com.xrone.julis.compous.view.HomeFragment.communication.adapter;
 
 import android.app.Activity;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,7 @@ import com.xrone.julis.compous.view.HomeFragment.communication.util.FormatUtils;
 import com.xrone.julis.compous.view.HomeFragment.communication.view.ICreateReplyView;
 import com.xrone.julis.compous.view.HomeFragment.communication.view.IReplyView;
 import com.xrone.julis.compous.view.HomeFragment.communication.widget.ContentWebView;
+import com.xrone.julis.compous.view.LoginAndRegister.LoginActivity;
 
 
 import java.util.ArrayList;
@@ -29,6 +33,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.ViewHolder> implements IReplyView {
 
@@ -48,6 +53,7 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
         replyPresenter = new ReplyPresenter(activity, this);
     }
 
+
     public void setReplyListWithNotify(String authorLoginName, @NonNull List<Reply> replyList) {
 
         this.authorLoginName = authorLoginName;
@@ -57,6 +63,7 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
         for (int n = 0; n < replyList.size(); n++) {
             Reply reply = replyList.get(n);
             positionMap.put(reply.getId(), n);
+
         }
         notifyDataSetChanged();
     }
@@ -149,7 +156,7 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
 
         void update(int position) {
             reply = replyList.get(position);
-
+            Log.e("reply.getReplyId()",reply.getReplyId());
             updateReplyViews(reply, position, positionMap.get(reply.getReplyId()));
         }
 
@@ -164,9 +171,12 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
             tvIndex.setText(activity.getString(R.string.__floor, position + 1));
             tvCreateTime.setText(FormatUtils.getRelativeTimeSpanString(reply.getCreateAt()));
             updateUpViews(reply);
+
            if (targetPosition == null) {
                 tvTargetPosition.setVisibility(View.GONE);
+
             } else {
+
                 tvTargetPosition.setVisibility(View.VISIBLE);
                 tvTargetPosition.setText(activity.getString(R.string.reply___floor, targetPosition + 1));
             }
@@ -179,11 +189,16 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
         }
 
         void updateUpViews(@NonNull Reply reply) {
-           // btnUps.setText(String.valueOf(reply.getUpList().size()));
-            //btnUps.setCompoundDrawablesWithIntrinsicBounds(reply.getUpList().contains(LoginShared.getId(activity)) ? R.drawable.ic_thumb_up_theme_24dp : R.drawable.ic_thumb_up_grey600_24dp, 0, 0, 0);
+          //  btnUps.setText(String.valueOf(reply.getUpList().size()));
+            btnUps.setText("3");
+
+
+           // btnUps.setCompoundDrawablesWithIntrinsicBounds( R.drawable.com_thumb_up_grey600_24dp, 0, 0, 0);
         }
 
-//        @OnClick(R.id.img_avatar)
+//        @OnClick(R.id.img_avatar)*
+
+
 //        void onBtnAvatarClick() {
 //            UserDetailActivity.startWithTransitionAnimation(activity, reply.getAuthor().getLoginName(), imgAvatar, reply.getAuthor().getAvatarUrl());
 //        }
@@ -199,12 +214,13 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
 //            }
 //        }
 
-//        @OnClick(R.id.btn_at)
-//        void onBtnAtClick() {
-//            if (LoginActivity.checkLogin(activity)) {
-//                createReplyView.onAt(reply, positionMap.get(reply.getId()));
-//            }
-//        }
+        @OnClick(R.id.btn_at)
+        void onBtnAtClick() {
+            if (LoginActivity.checkLogin(activity)) {
+
+                createReplyView.onAt(reply, positionMap.get(reply.getId()));
+            }
+        }
 
     }
 

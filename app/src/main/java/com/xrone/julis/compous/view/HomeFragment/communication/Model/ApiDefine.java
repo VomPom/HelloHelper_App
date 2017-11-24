@@ -1,4 +1,4 @@
-package com.xrone.julis.compous.view.HomeFragment.communication.Model.api;
+package com.xrone.julis.compous.view.HomeFragment.communication.Model;
 
 import android.os.Build;
 

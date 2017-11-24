@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.xrone.julis.compous.view.HomeFragment.communication.Model.api.ApiDefine;
+import com.xrone.julis.compous.view.HomeFragment.communication.Model.ApiDefine;
 
 import org.joda.time.DateTime;
 import org.jsoup.Jsoup;

@@ -32,7 +32,6 @@ import android.widget.TextView;
 import com.loopj.android.image.SmartImageView;
 import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.view.application.exchangeRate.Data.Global_Data;
 
 import java.io.File;
 
@@ -132,7 +131,7 @@ public class PersonInfoView extends Activity implements View.OnClickListener {
         final PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setBackgroundDrawable(getResources().getDrawable(android.R.color.transparent));
         popupWindow.setOutsideTouchable(true);
-        View parent = LayoutInflater.from(this).inflate(R.layout.activity_main, null);
+        View parent = LayoutInflater.from(this).inflate(R.layout.activity_main_old, null);
         popupWindow.showAtLocation(parent, Gravity.BOTTOM, 0, 0);
         //popupWindow在弹窗的时候背景半透明
         final WindowManager.LayoutParams params = getWindow().getAttributes();
