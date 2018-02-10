@@ -116,4 +116,8 @@
     <color name="base_accent_color">#ffd84440</color>
     <color name="gray2">#ffeef2fb</color>
     <color name="green">#4CAF50</color>
+    <color name="widget_background_light">@android:color/white</color>
+    <color name="widget_background_checked_light">#ffeeeeee</color>
+    <color name="widget_background_dark">#ff3c3c3c</color>
+    <color name="widget_background_checked_dark">#ff444444</color>
 </resources>

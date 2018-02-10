@@ -7,15 +7,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
-        <!--
+
         <RelativeLayout
             android:id="@+id/search_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
 
             android:gravity="center_vertical"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/btn_search"
@@ -33,7 +35,7 @@
                 android:paddingStart="12dp"
                 android:text="搜索"
                 android:textColor="@color/white"
-                android:textSize="12dp"/>
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,70 +45,69 @@
                 android:layout_toStartOf="@+id/btn_search"
                 android:background="@drawable/search_input_half"
                 android:clickable="true"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
 
 
                 <AutoCompleteTextView
                     android:id="@+id/searchText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/map_search_input"
                     android:background="@color/transparent"
-                    android:hint="请输入搜索关键字"
-                    android:textColorHint="@color/gray"
-                    android:maxLines="1"
-                    android:scrollbars="none"
-                    android:lines="1"
                     android:completionThreshold="1"
+                    android:drawableLeft="@drawable/map_search_input"
+                    android:hint="请输入搜索关键字"
                     android:imeOptions="actionDone"
                     android:inputType="text|textAutoComplete"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:scrollbars="none"
                     android:textColor="@color/red"
+                    android:textColorHint="@color/gray"
                     android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
-        -->
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
 
-    <com.amap.api.maps2d.MapView
-        android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+            <com.amap.api.maps2d.MapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
 
-    <RadioGroup
+            <RadioGroup
 
-        android:background="@color/white"
+                android:id="@+id/check_language"
 
-        android:id="@+id/check_language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingRight="4dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        >
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingRight="4dp">
 
 
-        <RadioButton
-            android:id="@+id/radio_ch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:checked="false"
-            android:text="Chinese"/>
+                <RadioButton
+                    android:id="@+id/radio_ch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Chinese"
+                    android:textSize="12sp" />
 
-        <RadioButton
-            android:id="@+id/radio_en"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:checked="true"
-            android:text="English"/>
+                <RadioButton
+                    android:id="@+id/radio_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="English"
+                    android:textSize="12sp" />
 
-         </RadioGroup>
+            </RadioGroup>
         </RelativeLayout>
 
     </LinearLayout>

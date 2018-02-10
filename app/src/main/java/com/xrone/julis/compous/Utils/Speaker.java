@@ -2,19 +2,7 @@ package com.xrone.julis.compous.Utils;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.iflytek.cloud.ErrorCode;
-import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechRecognizer;
@@ -60,8 +48,8 @@ public class Speaker {
     }
     /***********语音合成*************/
     public void init(Context context) {
-        progressDialog=new ProgressDialog(context);
-        progressDialog.setMessage("Synthetic speech is being synthesized...");
+       // progressDialog=new ProgressDialog(context);
+     //   progressDialog.setMessage("Synthetic speech is being synthesized...");
 
         //1.创建SpeechSynthesizer对象, 第二个参数：本地合成时传InitListener
         mTts = SpeechSynthesizer.createSynthesizer(context, null);
@@ -76,7 +64,7 @@ public class Speaker {
         //如果不需要保存合成音频，注释该行代码
     }
     public void startSpeaking(String speechText){
-        progressDialog.show();
+        //progressDialog.show();
         mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./sdcard/iflytek.pcm");
         //3.开始合成
         mTts.startSpeaking("" + speechText, new com.iflytek.cloud.SynthesizerListener() {
@@ -84,7 +72,7 @@ public class Speaker {
             //开始播放
             @Override
             public void onSpeakBegin() {
-               progressDialog.dismiss();
+             //  progressDialog.dismiss();
 
             }
 

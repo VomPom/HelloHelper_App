@@ -27,6 +27,7 @@ public class WelComeActivity extends Activity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
             }
         }.start();
     }

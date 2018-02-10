@@ -9,8 +9,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.xrone.julis.compous.StringData.StringOfID;
-import com.xrone.julis.compous.view.application.translate.util.ReplaceABC;
-import com.xrone.julis.compous.view.application.translate.util.UrlString;
+import com.xrone.julis.compous.Application.translate.util.ReplaceABC;
+import com.xrone.julis.compous.Application.translate.util.UrlString;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

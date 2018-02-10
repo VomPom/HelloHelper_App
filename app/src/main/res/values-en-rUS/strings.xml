@@ -16,7 +16,7 @@
     <string name="confirm_password">PWD2</string>
     <string name="nickname">Input Username</string>
     <string name="sex_boy">Boy</string>
-    <string name="radio_sex_girl">Girl</string>
+    <string name="sex_girl">Girl</string>
     <string name="radio_sex">Sex</string>
     <string name="register">Register</string>
     <string name="forget">Forgot the password?</string>
@@ -86,8 +86,59 @@
     <string name="app_expreess_tip_noInput">Please input the message</string>
     <string name="chEnArticle">Culture Learning</string>
 
-    <string name="create_at__">%sMade at</string>
+
+
+    <!--交流社区-->
     <string name="tab_top">Top</string>
     <string name="tab_all">All</string>
     <string name="tab_good">Good</string>
+    <string name="tab_unknown">unknown</string>
+    <string name="tab_share">tab_share</string>
+    <string name="tab_ask">tab_ask</string>
+    <string name="tab_job">tab_job</string>
+    <string name="tab_dev">tab_dev</string>
+
+
+    <string name="author">Author</string>
+    <string name="topic__">Topic：%s</string>
+    <string name="__floor">%d Floor</string>
+    <string name="reply___floor">Reply：%d Floor</string>
+    <string name="create_at__">Create At：%s</string>
+    <string name="score__">Score：%d</string>
+    <string name="register_time__">Registration time：%s</string>
+    <string name="__create">%s Created</string>
+    <string name="__count_visit">%d Browse</string>
+    <string name="__count_reply">%d Replies</string>
+    <string name="_slash_">/</string>
+    <string name="_dot_">•</string>
+    <string name="no_reply">No Reply</string>
+    <string name="create_topic_content_hint">Say something...</string>
+
+
+    <string name="no_market_install_in_system">There is no application store installed in the system</string>
+    <string name="no_browser_install_in_system">There is no browser installed in the system</string>
+    <string name="no_email_client_install_in_system">There is no mail client installed in the system</string>
+
+
+    <string name="logout">Logout</string>
+    <string name="need_login_tip">This operation requires login accounts. Are you logging in now?</string>
+    <string name="logout_tip">Are you sure you want to logout?</string>
+    <string name="login_success">Login successful!</string>
+    <string name="relogin">Log in again</string>
+
+    <string name="load_more_finished">It\'s up to the end.</string>
+    <string name="load_more_failed">Load failed,click to Retry</string>
+
+    <string name="recently_reply">Recently Reply</string>
+    <string name="recently_topic">Recently Topic</string>
+
+    <string name="dra_nav_mytopic"></string>
+    <string name="create_topic_title_hint">title</string>
+    <string name="send_to_tab__">send to tab</string>
+    <string name="topic">topic</string>
+    <string name="new_topic">new topic</string>
+    <string name="post_success">post success</string>
+    <string name="notification">Notification</string>
+    <string name="setting_langeuage">langeuage</string>
+
 </resources>

@@ -124,7 +124,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                >
-                <com.xrone.julis.compous.view.person.view.CircleImageView
+                <com.xrone.julis.compous.person.view.CircleImageView
                     android:id="@+id/img_avatar"
                     android:layout_width="18dp"
                     android:layout_height="14dp"

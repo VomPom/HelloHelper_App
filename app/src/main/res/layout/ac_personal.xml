@@ -25,13 +25,13 @@
                 android:id="@+id/person_information"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/setting_item_selector">
-                <com.loopj.android.image.SmartImageView
+                <com.xrone.julis.compous.person.view.CircleImageView
                     android:id="@+id/person_head"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_width="80.0dip"
                     android:layout_height="80.0dip"
-                    android:src="@drawable/head" />
+                    android:src="@drawable/person_default_head" />
                 <TextView
                     android:textSize="18.0dip"
                     android:id="@+id/person_name"
@@ -39,7 +39,7 @@
                     android:layout_toRightOf="@+id/person_head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="JULIS" />
+                    android:text="Not Login." />
                 <TextView
                     android:id="@+id/person_id"
                     android:textSize="14.0dip"
@@ -47,7 +47,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_below="@+id/person_name"
                     android:layout_toRightOf="@+id/person_head"
-                    android:text="ID：669559" />
+                    android:text="ID：000000" />
 
                 <ImageView
                     android:layout_marginRight="15dp"

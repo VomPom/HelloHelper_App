@@ -3,13 +3,8 @@ package com.xrone.julis.compous.Utils;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.util.Log;
 
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.model.TranslateResultModel;
-import com.xrone.julis.compous.view.application.map.MapActivity;
-import com.xrone.julis.compous.view.application.map.navigation.WalkRouteCalculateActivity;
 
 /**
  * Created by Julis on 2017/10/28.

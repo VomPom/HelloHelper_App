@@ -2,13 +2,13 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:background="@color/gray">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -21,30 +21,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignBottom="@+id/nav_top_foreground"
-                android:src="@drawable/com_nav_header_bg"
+                android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:adjustViewBounds="true" />
+                android:src="@drawable/com_nav_header_bg" />
 
             <RelativeLayout
                 android:id="@+id/nav_top_foreground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:background="#01000000">
 
-                <com.xrone.julis.compous.view.HomeFragment.communication.widget.AdaptStatusBarView
+                <com.xrone.julis.compous.HomeFragment.communication.widget.AdaptStatusBarView
                     android:id="@+id/nav_adapt_status_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
+
                     android:id="@+id/layout_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/nav_adapt_status_bar"
-                    android:padding="16dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                    <com.xrone.julis.compous.view.person.view.CircleImageView
+                    <com.xrone.julis.compous.person.view.CircleImageView
+
                         android:id="@+id/img_avatar"
                         android:layout_width="72dp"
                         android:layout_height="72dp"
@@ -54,6 +57,7 @@
                         android:id="@+id/tv_login_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="16dp"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
@@ -63,11 +67,11 @@
                         android:id="@+id/tv_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="4dp"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         tools:text="积分：0" />
-
                 </LinearLayout>
 
                 <ImageView
@@ -78,108 +82,108 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/layout_info"
                     android:layout_margin="24dp"
-                    android:padding="8dp"
-                    android:scaleType="center"
                     android:adjustViewBounds="true"
-                    android:background="?attr/selectableItemBackgroundBorderless" />
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="8dp"
+                    android:scaleType="center" />
 
                 <TextView
                     android:id="@+id/btn_logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/layout_info"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignBottom="@+id/layout_info"
                     android:layout_margin="16dp"
-                    android:paddingTop="8dp"
+                    android:background="?attr/selectableItemBackground"
                     android:paddingBottom="8dp"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
+                    android:paddingTop="8dp"
                     android:text="@string/logout"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:background="?attr/selectableItemBackground" />
+                    android:textSize="14sp" />
 
             </RelativeLayout>
 
         </RelativeLayout>
+
         <View
             android:layout_width="match_parent"
-            android:background="@color/white"
-            android:layout_height="6dp">
+            android:layout_height="6dp"
+            android:background="@color/white">
 
         </View>
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
-            android:id="@+id/btn_nav_all"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?attr/selectableItemBackground"
-            android:checked="true"
-            app:iconNormal="@drawable/com_thumb_up_grey600_24dp"
-            app:iconChecked="@drawable/com_thumb_up_grey600_24dp"
-            app:title="@string/tab_all" />
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
-            android:id="@+id/btn_nav_good"
+        <com.xrone.julis.compous.HomeFragment.NavigationItem
+            android:id="@+id/btn_nav_my_topic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/app_about_us"
-            app:iconChecked="@drawable/app_about_us"
-            app:title="@string/tab_good" />
+            app:iconChecked="@drawable/com_thumb_up_grey_theme_24dp"
+            app:iconNormal="@drawable/person_relative"
+            app:title="@string/reply" />
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
-            android:id="@+id/btn_nav_share"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/app_about_us"
-            app:iconChecked="@drawable/app_about_us"
-            app:title="@string/tab_share" />
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
-            android:id="@+id/btn_nav_ask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/app_about_us"
-            app:iconChecked="@drawable/app_about_us"
-            app:title="@string/tab_ask" />
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
-            android:id="@+id/btn_nav_job"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/app_about_us"
-            app:iconChecked="@drawable/app_about_us"
-            app:title="@string/tab_job" />
+            android:layout_height="2dp"
+            android:background="@color/gray1" />
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
-            android:id="@+id/btn_nav_dev"
+        <com.xrone.julis.compous.HomeFragment.NavigationItem
+            android:id="@+id/btn_nav_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/app_about_us"
-            app:iconChecked="@drawable/app_about_us"
-            app:title="@string/tab_dev" >
-<!--
-            <View style="@style/AppWidget.DeepLine"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/white"/>
-        -->
-        </com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem>
+            app:iconChecked="@drawable/person_save"
+            app:iconNormal="@drawable/person_save"
+            app:title="@string/notification" />
+
+
+
+        <!--
+                <com.xrone.julis.compous.view.HomeFragment.NavigationItem
+                    android:id="@+id/btn_nav_ask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:iconNormal="@drawable/app_about_us"
+                    app:iconChecked="@drawable/app_about_us"
+                    app:title="@string/tab_ask" />
+
+                <com.xrone.julis.compous.view.HomeFragment.NavigationItem
+                    android:id="@+id/btn_nav_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:iconNormal="@drawable/app_about_us"
+                    app:iconChecked="@drawable/app_about_us"
+                    app:title="@string/tab_job" />
+
+                <com.xrone.julis.compous.view.HomeFragment.NavigationItem
+                    android:id="@+id/btn_nav_dev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:iconNormal="@drawable/app_about_us"
+                    app:iconChecked="@drawable/app_about_us"
+                    app:title="@string/tab_dev" >
+
+                    <View style="@style/AppWidget.DeepLine"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/white"/>
+
+                </com.xrone.julis.compous.view.HomeFragment.NavigationItem>-->
         <!--style="@style/AppWidget.DeepLine"-->
         <View
-            android:layout_height="20dp"
             android:layout_width="match_parent"
-            android:background="@color/white"
+            android:layout_height="2dp"
+            android:background="@color/gray1" />
 
-             />
-
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
+        <!-- <com.xrone.julis.compous.view.HomeFragment.NavigationItem
             android:id="@+id/btn_nav_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -187,26 +191,80 @@
             app:iconNormal="@drawable/app_about_us"
             app:iconChecked="@drawable/app_about_us"
             app:title="@string/no_browser_install_in_system" />
+-->
+        <com.xrone.julis.compous.HomeFragment.NavigationItem
+            android:id="@+id/btn_nav_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            app:iconChecked="@drawable/person_consulation"
+            app:iconNormal="@drawable/person_consulation"
+            app:title="@string/feedback" />
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
+        <com.xrone.julis.compous.HomeFragment.NavigationItem
             android:id="@+id/btn_nav_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/app_about_us"
-            app:iconChecked="@drawable/app_about_us"
+            app:iconChecked="@drawable/person_setting"
+            app:iconNormal="@drawable/person_setting"
             app:title="@string/setting" />
 
-        <com.xrone.julis.compous.view.HomeFragment.communication.view.NavigationItem
+        <com.xrone.julis.compous.HomeFragment.NavigationItem
             android:id="@+id/btn_nav_about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/app_about_us"
-            app:iconChecked="@drawable/app_about_us"
+            app:iconChecked="@drawable/person_save"
+            app:iconNormal="@drawable/person_save"
             app:title="@string/about_us" />
-        <Space style="@style/AppWidget.Gap"
-            android:background="@color/white"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="30dp"
+                    android:text="HelloHelper"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="30dp"
+                    android:text="V:1.3.1"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray1" />
     </LinearLayout>
+
 
 </android.support.v4.widget.NestedScrollView>

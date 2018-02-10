@@ -19,7 +19,7 @@
     <dimen name="app_title_size">14dp</dimen>
 
 
-    <dimen name="app_bar_size">56dp</dimen>
+    <dimen name="app_bar_size">48dp</dimen>
     <dimen name="app_bar_elevation">4dp</dimen>
     <dimen name="shadow_gap_elevation">12dp</dimen>
     <dimen name="shadow_gap_margin_fill">6dp</dimen>

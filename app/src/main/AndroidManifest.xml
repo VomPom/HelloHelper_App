@@ -34,7 +34,7 @@
             android:name="BaiduMobAd_SEND_STRATEGY"
             android:value="APP_START" />
         <!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
-        <!-- <meta-data android:name="BaiduMobAd_TIME_INTERVAL" android:value="2" /> -->
+        <!-- <meta-data android:name="" android:value="2" /> -->
         <!-- 日志仅在wifi网络下发送，默认为false -->
         <meta-data
             android:name="BaiduMobAd_ONLY_WIFI"
@@ -65,27 +65,28 @@
         </intent-filter>
       </activity>
 
-      <activity android:name=".view.person.ClipImageActivity"></activity>
+      <activity android:name=".person.ClipImageActivity"></activity>
       <activity android:name=".Utils.Browser"></activity>
-      <activity android:name=".view.person.PersonInfoView"></activity>
-      <activity android:name=".view.application.translate.BDTranslator"></activity>
-      <activity android:name=".view.LoginAndRegister.LoginActivity"></activity>
-      <activity android:name=".view.LoginAndRegister.RegisterActivity"></activity>
-      <activity android:name=".view.HomeFragment.ShareInformation" ></activity>
-      <activity android:name=".view.application.map.MapActivity"></activity>
+      <activity android:name=".person.PersonInfoView"></activity>
+        <activity android:name=".LoginAndRegister.LoginActivity"></activity>
+      <activity android:name=".LoginAndRegister.RegisterActivity"></activity>
+        <activity android:name=".Application.map.MapActivity"></activity>
       <service  android:name=".Utils.update.UpdateService"></service>
-      <activity android:name=".view.application.map.navigation.WalkRouteCalculateActivity"/>
-      <activity android:name=".view.application.about.AboutUsActivity"></activity>
-      <activity android:name=".view.application.exchangeRate.CurrencyConverterActivity"/>
-      <activity android:name=".view.application.exchangeRate.Activity_conversion_listview"/>
-      <activity android:name=".view.application.Feedback_Activity"/>
-      <activity android:name=".view.application.Express.ExpressActivity" android:windowSoftInputMode="adjustResize"></activity>
-      <activity android:name=".view.application.Express.WalkRouteActivity"/>
-      <activity android:name=".view.application.Express.WalkRouteDetailActivity"/>
-      <activity android:name=".view.application.article.ArticleAcvitity"/>
-      <activity android:name=".view.application.translate.Translate"/>
-      <activity android:name=".view.HomeFragment.communication.TopicActivity"/>
+      <activity android:name=".Application.map.navigation.WalkRouteCalculateActivity"/>
+      <activity android:name=".Application.about.AboutUsActivity"></activity>
+      <activity android:name=".Application.exchangeRate.CurrencyConverterActivity"/>
+      <activity android:name=".Application.exchangeRate.Activity_conversion_listview"/>
+      <activity android:name=".Application.FeedbackActivity"/>
+      <activity android:name=".Application.Express.ExpressActivity" android:windowSoftInputMode="adjustResize"></activity>
+      <activity android:name=".Application.Express.Activity.WalkRouteActivity"/>
+      <activity android:name=".Application.Express.Activity.WalkRouteDetailActivity"/>
+      <activity android:name=".Application.article.ArticleAcvitity"/>
+      <activity android:name=".Application.translate.TranslateActivity"/>
+      <activity android:name=".HomeFragment.communication.TopicActivity"/>
       <!--<activity android:name=".view.application.communicatCommunicationActivitytion"/>-->
+      <activity android:name=".HomeFragment.communication.CreateTopicActivity"/>
+      <activity android:name=".HomeFragment.communication.SettingActivity"/>
+     <activity android:name=".HomeFragment.communication.UserDetailActivity"/>
 
       <service  android:name="com.amap.api.location.APSService"></service>
 

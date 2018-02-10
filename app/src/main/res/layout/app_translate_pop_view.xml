@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xrone.julis.compous.view.application.translate.view.ViewContainer xmlns:android="http://schemas.android.com/apk/res/android"
+<com.xrone.julis.compous.Application.translate.view.ViewContainer xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#77000000">
@@ -52,4 +52,4 @@
             android:textSize="14sp" />
     </LinearLayout>
 
-</com.xrone.julis.compous.view.application.translate.view.ViewContainer>
+</com.xrone.julis.compous.Application.translate.view.ViewContainer>

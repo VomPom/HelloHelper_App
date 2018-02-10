@@ -10,9 +10,9 @@ import android.os.Message;
 import android.util.Log;
 
 import com.xrone.julis.compous.R;
+import com.xrone.julis.compous.StringData.NetURL;
 import com.xrone.julis.compous.Utils.update.CommonDialog;
 import com.xrone.julis.compous.Utils.update.UpdateService;
-import com.xrone.julis.compous.StringData.AppURL;
 import com.xrone.julis.compous.model.Hello;
 import com.xrone.julis.compous.model.UpdateBean;
 
@@ -67,7 +67,7 @@ public class CheckVersion {
         /**
          * 请求数据库更新请求
          */
-        HttpUtils.getNewsJSON(AppURL.CHECKUPDATE_URL,updateHandler);
+        HttpUtils.getNewsJSON(NetURL.CHECKUPDATE_URL,updateHandler);
     }
 
     /**
@@ -99,24 +99,15 @@ public class CheckVersion {
         CommonDialog.Builder builder = new CommonDialog.Builder(context);
         builder.setTitle(R.string.update_prompt);
         builder.setMessage(updateBean.getContent());
-        builder.setPositiveButton(R.string.update_immediately, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                Intent intent = new Intent(context, UpdateService.class);
-                intent.putExtra("apkUrl", updateBean.getUpdateUrl());
-                Log.e("downloadURL",updateBean.getUpdateUrl());
-                context.startService(intent);
+        builder.setPositiveButton(R.string.update_immediately, (dialog, which) -> {
+            dialog.dismiss();
+            Intent intent = new Intent(context, UpdateService.class);
+            intent.putExtra("apkUrl", updateBean.getUpdateUrl());
+            Log.e("downloadURL",updateBean.getUpdateUrl());
+            context.startService(intent);
 
-            }
         });
-        builder.setNegativeButton(R.string.update_nexttime, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-
-            }
-        });
+        builder.setNegativeButton(R.string.update_nexttime, (dialog, which) -> dialog.dismiss());
         builder.create().show();
     }
 }

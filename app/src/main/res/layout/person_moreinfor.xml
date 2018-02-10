@@ -37,7 +37,7 @@
                     android:text="@string/Head_icon"
                     android:textSize="18sp" />
 
-                <com.loopj.android.image.SmartImageView
+                <com.xrone.julis.compous.person.view.CircleImageView
                     android:id="@+id/person_chage_headImage"
                     android:layout_width="60.0dip"
                     android:layout_height="60.0dip"
@@ -64,6 +64,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dip" />
             <RelativeLayout
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                <TextView
@@ -77,18 +78,34 @@
                       android:paddingLeft="10dp"
                       android:paddingRight="16dp"
                       android:text="@string/username"
+
                       android:textSize="18sp" />
                 <EditText
-                    android:id="@+id/person_chage_username"
-                    android:background="@null"
+                    android:id="@+id/person_chage_username_ed"
+                    android:background="@drawable/edittext_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="用户名"
+                    android:visibility="invisible"
+                    android:textSize="16dp"
+                    android:maxLines="1"
+                    android:maxEms="14"
+                    android:maxLength="14"
+                    android:layout_alignBaseline="@+id/person_information_name"
+                    android:layout_alignBottom="@+id/person_information_name"
+                    android:layout_alignParentEnd="true" />
+                <TextView
+                    android:id="@+id/person_chage_username_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:text="用户名"
                     android:textSize="16dp"
+                    android:textColor="@color/black"
                     android:maxLines="1"
-                    android:maxEms="18"
-                    android:maxLength="18"
+                    android:maxEms="14"
+                    android:maxLength="14"
                     android:layout_alignBaseline="@+id/person_information_name"
                     android:layout_alignBottom="@+id/person_information_name"
                     android:layout_alignParentEnd="true" />
@@ -98,6 +115,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dip" />
         <RelativeLayout
+            android:id="@+id/person_choose_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView

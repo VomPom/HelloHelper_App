@@ -10,10 +10,10 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.xrone.julis.compous.StringData.StringOfID;
-import com.xrone.julis.compous.view.application.translate.TipViewController;
+import com.xrone.julis.compous.Application.translate.view.TipViewController;
 import com.xrone.julis.compous.Utils.MD5;
-import com.xrone.julis.compous.view.application.translate.util.ReplaceABC;
-import com.xrone.julis.compous.view.application.translate.util.UrlString;
+import com.xrone.julis.compous.Application.translate.util.ReplaceABC;
+import com.xrone.julis.compous.Application.translate.util.UrlString;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

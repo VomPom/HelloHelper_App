@@ -16,7 +16,7 @@
     <string name="confirm_password">确认密码</string>
     <string name="nickname">输入昵称</string>
     <string name="sex_boy">男</string>
-    <string name="radio_sex_girl">女</string>
+    <string name="sex_girl">女</string>
     <string name="radio_sex">性别</string>
     <string name="register">注册</string>
     <string name="forget">忘记密码？</string>
@@ -52,7 +52,7 @@
     <string name="inputpwd">填写密码</string>
     <string name="confirmpass">确认密码</string>
     <string name="chineseLearn">汉语学习</string>
-
+    <string name="notification">消息</string>
 
 
     <!--2017-10-->
@@ -124,6 +124,8 @@
     <string name="_slash_">/</string>
     <string name="_dot_">•</string>
     <string name="no_reply">暂无回复</string>
+    <string name="create_topic_content_hint">说点什么吧</string>
+
 
     <string name="no_market_install_in_system">系统中没有安装应用商店</string>
     <string name="no_browser_install_in_system">系统中没有安装浏览器</string>
@@ -136,6 +138,17 @@
     <string name="login_success">登录成功</string>
     <string name="relogin">重新登录</string>
 
+    <string name="load_more_finished">已经到底啦</string>
+    <string name="load_more_failed">加载失败，点击重试</string>
 
 
+    <string name="dra_nav_mytopic"></string>
+    <string name="create_topic_title_hint">标题</string>
+    <string name="send_to_tab__">发布到分类：</string>
+    <string name="topic">话题</string>
+    <string name="new_topic">发布话题</string>
+    <string name="post_success">发布成功</string>
+    <string name="recently_reply">最近回复</string>
+    <string name="recently_topic">最近发布</string>
+    <string name="setting_langeuage">语言</string>
 </resources>
