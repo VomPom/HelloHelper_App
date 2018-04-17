@@ -32,7 +32,7 @@ import java.net.URLEncoder;
 
 public class WalkRouteCalculateActivity extends BaseActivity {
 
-    private  int SPEED_EMU=120;
+    private  int SPEED_EMU=580;
     private Speaker speaker;
     public static TextView navigationTextView;
     private String textAfter;
@@ -104,6 +104,15 @@ public class WalkRouteCalculateActivity extends BaseActivity {
 
     @Override
     public void onEndEmulatorNavi() {
+        new MyAlert(WalkRouteCalculateActivity.this, getString(R.string.map_navi_is_end), getString(R.string.map_navi_is_end_OK)) {
+            @Override
+            public void onClickNo() {
+            }
+            @Override
+            public void onClickYes() {
+                finish();
+            }
+        }.showMyAlert();
         super.onEndEmulatorNavi();
     }
 
@@ -196,8 +205,8 @@ public class WalkRouteCalculateActivity extends BaseActivity {
 
     @Override
     protected void onStop() {
-        super.onStop();
-        speaker.closeMtts();
+       super.onStop();
+       speaker.closeMtts();
     }
 
 

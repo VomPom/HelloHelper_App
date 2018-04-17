@@ -2,6 +2,7 @@ package com.xrone.julis.compous;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,12 +13,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.baidu.mobstat.StatService;
 import com.bumptech.glide.Glide;
+import com.xrone.julis.compous.Application.map.navigation.WalkRouteCalculateActivity;
 import com.xrone.julis.compous.Utils.BottomNavigationViewHelper;
 import com.xrone.julis.compous.Utils.CheckRequiredPermissionUtils;
 import com.xrone.julis.compous.Utils.CheckVersion;
@@ -32,7 +35,9 @@ import com.xrone.julis.compous.Application.exchangeRate.Data.Global_Data;
 import com.xrone.julis.compous.Application.ApplicationFragment;
 import com.xrone.julis.compous.HomeFragment.HomeFragment;
 import com.xrone.julis.compous.HomeFragment.PersonFragment;
+import com.xrone.julis.compous.Utils.MyAlert;
 import com.xrone.julis.compous.model.Hello;
+import com.xrone.julis.compous.person.PersonInfoView;
 import com.xrone.julis.compous.person.view.CircleImageView;
 
 import java.util.Map;
@@ -63,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgThemeDark;
     @BindView(R.id.nav_top_background)
     View navTopBackground;
+    @BindView(R.id.btn_change_info)
+    TextView change_info;
     /*
      * 抽屉导航布局
      */
@@ -146,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.com_home_menu_24dp);
         toolbar.setNavigationOnClickListener(new NavigationOpenClickListener(drawerLayout));
         // toolbar.setOnClickListener(new DoubleClickBackToContentTopListener(this));
-
         drawerLayout.setDrawerShadow(R.drawable.app_about_us, GravityCompat.START);
         drawerLayout.addDrawerListener(drawerListener);
 
@@ -173,14 +179,14 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_nav_notification,
             R.id.btn_nav_setting,
             R.id.btn_nav_about,
-            R.id.btn_nav_feedback
+            R.id.btn_nav_feedback,
+            R.id.btn_change_info
     })
     void onOtherNavigationItemClick(NavigationItem itemView) {
         Intent intent= null;
         Context context=MainActivity.this;
         switch (itemView.getId()) {
             case R.id.btn_nav_notification:
-
                 break;
             case R.id.btn_nav_feedback:
                 //settingAction.startDelayed();
@@ -194,7 +200,10 @@ public class MainActivity extends AppCompatActivity {
                 // aboutAction.startDelayed();
                 intent= new Intent(context,SettingActivity.class);
                 break;
-
+            case R.id.btn_change_info:
+                // aboutAction.startDelayed();
+                intent= new Intent(context,PersonInfoView.class);
+                break;
         }
         drawerLayout.closeDrawers();
         startActivity(intent);
@@ -232,7 +241,6 @@ public class MainActivity extends AppCompatActivity {
 //        ContentResolver resolver=getContentResolver();
 //        Uri uri=Uri.parse("content://sms/");
 //        resolver.registerContentObserver(uri,true,new SmsObserver(this,new Handler()));
-//
         // ListenClipboardService.start(this);
     }
 
@@ -251,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
         updateUserInfoViews();
     }
 
+
     /**
      * 检查是否登陆更新info
      */
@@ -264,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
             tvLoginName.setText(Hello.username);
             btnLogout.setVisibility(View.VISIBLE);
         }else{
-            tvLoginName.setText("点击登陆");
+            tvLoginName.setText(getResources().getString(R.string.click_login));
             tvScore.setText(null);
             imgAvatar.setImageDrawable(getResources().getDrawable(R.drawable.com_image_placeholder));
             btnLogout.setVisibility(View.GONE);
@@ -317,14 +326,28 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+    /**
+     * 监听返回按键
+     * @param keyCode
+     * @param event
+     * @return
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) { //按下的如果是BACK，同时没有重复
+            MyAlert.AlertWithOK(
+                    MainActivity.this,
+                    getString(R.string.is_exit),
+                    getString(R.string.ok_exit_app), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            System.exit(0);
+                        }
+                    });
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }
-
-
-
-
-
-
-
-
-
-

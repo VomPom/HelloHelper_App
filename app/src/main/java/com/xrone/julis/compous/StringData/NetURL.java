@@ -9,27 +9,11 @@ package com.xrone.julis.compous.StringData;
  */
 public class NetURL {
 
-//
-//    public static final String GET_NEWS_URL="http://10.130.251.23/hello/getJSONinfomation.php";
-//  public static final String SHARE_URL="http://10.130.251.23/hello/share.php";
-//    public static final String REG_URL="http://10.130.251.23/hello/register.php";
-//    public static final String LOGIN_URL="http://10.130.251.23/hello/login.php";
-// public static final String APPINFORMATION_URL="http://10.130.251.23/hello/getJSONApplicationinfomation.php";
-
 
     public static final String WEBSITE="http://123.207.24.167";
     public static final String DIRECTIONARY="/hello/";
     public static final String USER_HEAD_DIR="image/user/";
     public static final String APPINFORMATION_URL=WEBSITE+DIRECTIONARY+"getCultureAtricle.php";
-
-    /**
-     * 新闻信息
-     */
-    public static final String GET_NEWS_URL=WEBSITE+DIRECTIONARY+"getJSONinfomation.php";
-    /**
-     * 分享交流
-     */
-    public static final String SHARE_URL=WEBSITE+DIRECTIONARY+"share.php";
     /**
      * 注册链接
      */
@@ -42,10 +26,6 @@ public class NetURL {
      * 快递查询
      */
     public static final String EXPRESS_URL= WEBSITE+DIRECTIONARY+"/hellohelper/appsearch.html";
-    /**
-     * 默认头像
-     */
-    public static final String DEFAULT_HEAD_URL="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498042419651&di=d45ce92bfa08b0304b0faacd4098b9f3&imgtype=0&src=http%3A%2F%2Fwww.czgongzuo.com%2FFiles%2FPerPhoto%2Fphotoman.gif";
     /**
      * 检查更新
      */

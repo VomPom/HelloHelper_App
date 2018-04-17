@@ -55,7 +55,6 @@ public class ArticleAcvitity extends Activity implements AdapterView.OnItemClick
 
         RequestQueue queue= Volley.newRequestQueue(this);
         StringRequest stringRequest=new StringRequest(StringRequest.Method.POST, NetURL.APPINFORMATION_URL, s -> {
-
             articleModels.addAll(DataOfJsonFactory.jsonToArrayList(s,ArticleModel.class));
             articleAdapter.notifyDataSetChanged();
         }, volleyError -> {

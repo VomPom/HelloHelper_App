@@ -88,12 +88,19 @@ public class MainPresenter implements IMainPresenter {
 
             @Override
             public void onResponse(String s) {
+
+
                     List<Topic> topics=new ArrayList<>();
                     JSONObject jsonObject   = null;
+
+
                     try {
+
                         jsonObject = new JSONObject(s);
                         JSONArray trans_result = jsonObject
                                 .getJSONArray("data");
+
+
                         for (int i = 0; i < trans_result.length(); i++) {
                             JSONObject jo = trans_result.optJSONObject(i);
                             Topic topic=new Topic();

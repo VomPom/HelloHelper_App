@@ -23,11 +23,13 @@
     <string name="Chatting">Chatting</string>
     <string name="Application">Application</string>
     <string name="Personal">Personal</string>
+    <string name="Learning">Learning</string>
     <string name="Home">Home</string>
     <string name="share">Share</string>
     <string name="input_translation_words">Input Your Words</string>
     <string name="tanslator">Tanslator</string>
     <string name="express">Express</string>
+    <string name="click_login">Click To Login</string>
 
     <string name="pulish">Published</string>
     <string name="Head_icon">Head Portrait</string>
@@ -76,6 +78,10 @@
     <string name="app_map">Map</string>
     <string name="map_navi_isOutOfNavigation">Do you want to quit navigation?</string>
     <string name="map_navi_OutOfNavigation">Click OK to exit navigation</string>
+
+
+    <string name="map_navi_is_end">The end of the navigation,thanks for your Cooperation.</string>
+    <string name="map_navi_is_end_OK">Click Ok to Quit.</string>
 
     <string name="networkIsNotAvailableTitle">Internet Connection</string>
     <string name="networkIsNotAvailableContent">Please check your internet connection!</string>
@@ -138,7 +144,10 @@
     <string name="topic">topic</string>
     <string name="new_topic">new topic</string>
     <string name="post_success">post success</string>
+    <string name="friends">Friends</string>
     <string name="notification">Notification</string>
     <string name="setting_langeuage">langeuage</string>
 
+    <string name="is_exit">Do you want to exit APP?</string>
+    <string name="ok_exit_app">Click OK exit APP</string>
 </resources>

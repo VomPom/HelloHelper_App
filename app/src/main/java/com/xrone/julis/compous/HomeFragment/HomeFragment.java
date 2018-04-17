@@ -101,8 +101,10 @@ public class HomeFragment extends Fragment  implements LoadMoreFooter.OnLoadMore
      * 刷新成功后，获取到新List列表
      * @param topicList
      */
+
     @Override
     public void onRefreshTopicListOk(@NonNull List<Topic> topicList) {
+
         page = 1;
         adapter.setTopicListWithNotify(topicList);
         refreshLayout.setRefreshing(false);

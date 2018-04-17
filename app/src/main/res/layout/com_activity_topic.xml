@@ -13,7 +13,7 @@
         android:elevation="@dimen/app_bar_elevation"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:navigationIcon="@drawable/com_arrow_back_white_24dp"
-        app:title="话题"
+        app:title="@string/topic"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <android.support.design.widget.CoordinatorLayout

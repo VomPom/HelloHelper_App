@@ -24,6 +24,7 @@ public class WelComeActivity extends Activity {
                     Thread.sleep(2000);
                     Intent intent=new Intent(WelComeActivity.this,MainActivity.class);
                     startActivity(intent);
+                    finish();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

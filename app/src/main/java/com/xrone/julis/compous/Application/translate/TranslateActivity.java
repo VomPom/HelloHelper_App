@@ -194,7 +194,8 @@ public class TranslateActivity extends Activity implements ITranslateView {
     protected void onPause() {
         super.onPause();
         if(mTts!=null){
-            mTts.destroy();
+            mTts.stopSpeaking();
+
         }
 
     }
@@ -202,15 +203,21 @@ public class TranslateActivity extends Activity implements ITranslateView {
     protected void onStop() {
         super.onStop();
         if(mTts!=null){
+            mTts.stopSpeaking();
             mTts.destroy();
+
         }
     }
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        speaker.closeMtts();
         if(mTts!=null){
-            mTts.destroy();
+            speaker.closeMtts();
+            Log.d("CLo", "  speaker.closeMtts();: ");
+            mTts.stopSpeaking();
         }
+
     }
     @Override
     public  void translate() {

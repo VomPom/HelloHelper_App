@@ -52,9 +52,9 @@
             android:name="BaiduMobAd_WIFI_LOCATION"
             android:value="true" />
 
-
+      <!--android:name=".MainActivity"-->
       <activity
-          android:name=".MainActivity"
+          android:name=".WelComeActivity"
           android:label="@string/app_name"
 
           android:screenOrientation="portrait"
@@ -64,6 +64,7 @@
           <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+      <activity android:name=".MainActivity"/>
 
       <activity android:name=".person.ClipImageActivity"></activity>
       <activity android:name=".Utils.Browser"></activity>

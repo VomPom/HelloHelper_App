@@ -29,7 +29,10 @@ public class CreateTopicPresenter implements ICreateTopicPresenter {
     @Override
     public void createTopicAsyncTask(@NonNull String tab, String title, String content) {
         createTopicView.onCreateTopicStart();
+
+
         RequestQueue queue= Volley.newRequestQueue(activity);
+
         StringRequest request=new StringRequest(
                 Request.Method.POST,
                 NetURL.ADDATOPIC_URL,

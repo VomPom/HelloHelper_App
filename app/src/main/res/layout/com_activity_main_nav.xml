@@ -86,7 +86,21 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:padding="8dp"
                     android:scaleType="center" />
-
+                <TextView
+                    android:id="@+id/btn_change_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/btn_logout"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingBottom="18dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="Change Info"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
                 <TextView
                     android:id="@+id/btn_logout"
                     android:layout_width="wrap_content"
@@ -140,7 +154,14 @@
             app:iconChecked="@drawable/person_save"
             app:iconNormal="@drawable/person_save"
             app:title="@string/notification" />
-
+        <com.xrone.julis.compous.HomeFragment.NavigationItem
+            android:id="@+id/friends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            app:iconChecked="@drawable/person_save"
+            app:iconNormal="@drawable/person_save"
+            app:title="@string/friends" />
 
 
         <!--
