@@ -24,7 +24,7 @@
     <string name="Application">Application</string>
     <string name="Personal">Personal</string>
     <string name="Learning">Learning</string>
-    <string name="Home">Home</string>
+    <string name="Community">Community</string>
     <string name="share">Share</string>
     <string name="input_translation_words">Input Your Words</string>
     <string name="tanslator">Tanslator</string>
@@ -56,6 +56,7 @@
     <string name="ok">OK</string>
     <string name="paste">Paste</string>
     <string name="chineseLearn">Learn</string>
+    <string name="OCR">OCR</string>
 
     <!--2017-10-->
     <string name="update_download_failed">Download failed</string>
@@ -139,8 +140,8 @@
     <string name="recently_topic">Recently Topic</string>
 
     <string name="dra_nav_mytopic"></string>
-    <string name="create_topic_title_hint">title</string>
-    <string name="send_to_tab__">send to tab</string>
+    <string name="create_topic_title_hint">Title</string>
+    <string name="send_to_tab__">Tab</string>
     <string name="topic">topic</string>
     <string name="new_topic">new topic</string>
     <string name="post_success">post success</string>

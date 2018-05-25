@@ -116,7 +116,7 @@ public class MainPresenter implements IMainPresenter {
                             int visitCount=
                                     replyCount==0 ?
                                             (int) (Math.random()*20):
-                                            (int) (replyCount * Math.random() * 10);
+                                            (int) ((replyCount * Math.random()+1)*10);
 
                             topic.setVisitCount(visitCount);
 

@@ -214,7 +214,6 @@ public class CurrencyConverterActivity extends Activity {
 
                 Log.e("JSON Parser", "Error parsing data " + e.toString());
             }
-
             return null;
         }
 

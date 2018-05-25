@@ -27,7 +27,8 @@
     <string name="Personal">个人</string>
     <string name="Learning">学习</string>
     <string name="friends">朋友</string>
-    <string name="Home">主页</string>
+    <string name="Community">社区</string>
+
     <string name="feedback">意见反馈</string>
     <string name="share">分享</string>
     <string name="input_translation_words">请输入要翻译的内容</string>
@@ -55,7 +56,7 @@
     <string name="collection">我的收藏</string>
     <string name="inputpwd">填写密码</string>
     <string name="confirmpass">确认密码</string>
-    <string name="chineseLearn">汉语学习</string>
+    <string name="OCR">图片识别</string>
     <string name="notification">消息</string>
 
 
@@ -161,5 +162,19 @@
     <string name="recently_reply">最近回复</string>
     <string name="recently_topic">最近发布</string>
     <string name="setting_langeuage">语言</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 
 </resources>

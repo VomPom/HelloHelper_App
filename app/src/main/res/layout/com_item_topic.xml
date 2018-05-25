@@ -38,7 +38,7 @@
                         android:textColor="@color/white"
                         android:textSize="12sp"
                         android:background="@color/green"
-                        tools:text="置顶"
+                        tools:text="Top"
                         tools:checked="true" />
 
                     <View

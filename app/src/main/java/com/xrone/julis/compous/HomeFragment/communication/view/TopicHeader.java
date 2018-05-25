@@ -1,8 +1,10 @@
 package com.xrone.julis.compous.HomeFragment.communication.view;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.xrone.julis.compous.LoginAndRegister.LoginActivity;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.HomeFragment.communication.HeaderAndFooterRecyclerView.HeaderAndFooterRecyclerView;
 import com.xrone.julis.compous.HomeFragment.communication.Model.Topic;
@@ -139,4 +142,16 @@ public class TopicHeader implements ITopicHeaderView {
         btnFavorite.setImageResource(R.drawable.com_arrow_back_white_24dp);
     }
 
+    @OnClick(R.id.btn_favorite)
+    void onBtnFavorite() {
+
+        Drawable drawable =activity.getResources().getDrawable(R.drawable.com_favorite_theme_24dp);
+
+
+            btnFavorite.setImageDrawable(drawable);
+            Snackbar.make(btnFavorite, "Collect Success!/收藏成功" +
+                    "", Snackbar.LENGTH_SHORT).show();
+
+
+    }
 }

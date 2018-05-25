@@ -10,6 +10,7 @@ import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.SynthesizerListener;
 import com.xrone.julis.compous.R;
+import com.xrone.julis.compous.StringData.StringOfID;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -26,7 +27,9 @@ public class Speaker {
     Context context;
     public Speaker(Context context) {
         this.context=context;
-        SpeechUtility.createUtility(context, "appid=594367c5");
+        SpeechUtility.createUtility(context, "appid="+ StringOfID.XUNFEI_APP_ID);
+        progressDialog=new ProgressDialog(context);
+        progressDialog.setMessage("Loading...");
         init(context);
     }
 
@@ -64,7 +67,7 @@ public class Speaker {
         //如果不需要保存合成音频，注释该行代码
     }
     public void startSpeaking(String speechText){
-        //progressDialog.show();
+        progressDialog.show();
         mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./sdcard/iflytek.pcm");
         //3.开始合成
         mTts.startSpeaking("" + speechText, new com.iflytek.cloud.SynthesizerListener() {
@@ -72,7 +75,7 @@ public class Speaker {
             //开始播放
             @Override
             public void onSpeakBegin() {
-             //  progressDialog.dismiss();
+               progressDialog.dismiss();
 
             }
 

@@ -8,11 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.AppCompatButton;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -46,7 +43,6 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnTextChanged;
 
 /**
  * Created by Julis on 2017/11/11.
@@ -73,7 +69,7 @@ public class TranslateActivity extends Activity implements ITranslateView {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.translate_main);
+        setContentView(R.layout.app_translate);
         ButterKnife.bind(this);
         initViews();
         lunch(getIntent());
@@ -118,8 +114,6 @@ public class TranslateActivity extends Activity implements ITranslateView {
                 break;
         }
     }
-
-
 
     /**
      * 启动筛选

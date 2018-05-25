@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tv_score)
     TextView tvScore;
     @BindView(R.id.btn_logout)
-    View btnLogout;
+    TextView btnLogout;
     @BindView(R.id.btn_theme_dark)
     ImageView imgThemeDark;
     @BindView(R.id.nav_top_background)
@@ -168,6 +168,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.btn_change_info)
+    void Btn_Change_info(){
+       Intent intent= new Intent(getBaseContext(),PersonInfoView.class);
+        startActivity(intent);
+    }
     @OnClick(R.id.btn_logout)
     void onBtnLogoutClick() {
         if(Hello.isLogin){
@@ -180,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_nav_setting,
             R.id.btn_nav_about,
             R.id.btn_nav_feedback,
-            R.id.btn_change_info
+
     })
     void onOtherNavigationItemClick(NavigationItem itemView) {
         Intent intent= null;
@@ -200,10 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 // aboutAction.startDelayed();
                 intent= new Intent(context,SettingActivity.class);
                 break;
-            case R.id.btn_change_info:
-                // aboutAction.startDelayed();
-                intent= new Intent(context,PersonInfoView.class);
-                break;
+
         }
         drawerLayout.closeDrawers();
         startActivity(intent);

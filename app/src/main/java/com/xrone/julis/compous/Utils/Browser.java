@@ -63,7 +63,7 @@ public class Browser extends Activity {
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                view.loadUrl(NetURL.EXPRESS_URL);
+//                view.loadUrl(NetURL.EXPRESS_URL);
                 return super.shouldOverrideUrlLoading(view, request);
 
             }

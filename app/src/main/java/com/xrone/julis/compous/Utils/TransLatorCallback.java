@@ -1,11 +1,10 @@
 package com.xrone.julis.compous.Utils;
 
-import android.app.ProgressDialog;
+
 import android.util.Log;
 
 import com.android.volley.Response;
 import com.xrone.julis.compous.model.TranslateResultModel;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

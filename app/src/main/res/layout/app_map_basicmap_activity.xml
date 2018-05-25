@@ -33,7 +33,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:paddingStart="12dp"
-                android:text="搜索"
+                android:text="Search"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
 
@@ -48,23 +48,27 @@
                 android:gravity="center_vertical">
 
 
-                <AutoCompleteTextView
-                    android:id="@+id/searchText"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/transparent"
-                    android:completionThreshold="1"
-                    android:drawableLeft="@drawable/map_search_input"
-                    android:hint="请输入搜索关键字"
-                    android:imeOptions="actionDone"
-                    android:inputType="text|textAutoComplete"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:scrollbars="none"
-                    android:textColor="@color/red"
-                    android:textColorHint="@color/gray"
-                    android:textSize="14sp" />
             </LinearLayout>
+
+            <AutoCompleteTextView
+                android:id="@+id/searchText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBaseline="@+id/btn_search"
+                android:layout_alignBottom="@+id/btn_search"
+                android:layout_toStartOf="@+id/btn_search"
+                android:background="@color/transparent"
+                android:completionThreshold="1"
+                android:drawableLeft="@drawable/map_search_input"
+                android:hint="Please input keyword"
+                android:imeOptions="actionDone"
+                android:inputType="text|textAutoComplete"
+                android:lines="1"
+                android:maxLines="1"
+                android:scrollbars="none"
+                android:textColor="@color/red"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -82,14 +86,12 @@
             <RadioGroup
 
                 android:id="@+id/check_language"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:background="@color/white"
                 android:orientation="vertical"
                 android:paddingRight="4dp">
-
 
                 <RadioButton
                     android:id="@+id/radio_ch"

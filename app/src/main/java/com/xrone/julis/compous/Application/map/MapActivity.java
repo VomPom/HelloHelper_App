@@ -281,15 +281,11 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         }
     }
 
-
-
 //    @Override
 //    public void onMapLongClick(LatLng latLng) {
 //        System.out.println("长按;"+latLng.latitude+"  sdg"+latLng.latitude);
 //        addExpressSignByLongPress(latLng,"","");
 //    }
-
-
 
     /**
      * 加入marker点
@@ -399,7 +395,7 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
         progDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progDialog.setIndeterminate(false);
         progDialog.setCancelable(false);
-        progDialog.setMessage("正在搜索:\n" + word);
+        progDialog.setMessage("Searching:\n" + word);
         progDialog.show();
     }
 
@@ -482,7 +478,7 @@ public class MapActivity extends Activity implements AMap.OnMarkerClickListener,
     PoiSearch.OnPoiSearchListener onPoiSearchListener =new PoiSearch.OnPoiSearchListener() {
         @Override
         public void onPoiSearched(PoiResult poiResult, int i) {
-            //dissmissProgressDialog();// 隐藏对话框
+            dissmissProgressDialog();// 隐藏对话框
             if (i == AMapException.CODE_AMAP_SUCCESS) {
                 if (poiResult != null && poiResult.getQuery() != null) {// 搜索poi的结果
                     if (poiResult.getQuery().equals(query)) {// 是否是同一条

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:background="@color/gray">
 
     <LinearLayout
@@ -28,14 +28,14 @@
             <RelativeLayout
                 android:id="@+id/nav_top_foreground"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
 
                 android:background="#01000000">
 
                 <com.xrone.julis.compous.HomeFragment.communication.widget.AdaptStatusBarView
                     android:id="@+id/nav_adapt_status_bar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
 
                 <LinearLayout
 
@@ -90,13 +90,11 @@
                     android:id="@+id/btn_change_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/btn_logout"
+
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="16dp"
+                    android:layout_below="@+id/nav_adapt_status_bar"
                     android:background="?attr/selectableItemBackground"
-                    android:paddingBottom="18dp"
-                    android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:text="Change Info"
                     android:textColor="@color/white"
@@ -247,7 +245,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:background="@color/white"
             android:orientation="horizontal"
             android:padding="20dp">
@@ -256,7 +254,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
-                android:src="@drawable/logo" />
+                android:src="@mipmap/logo" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

@@ -95,8 +95,8 @@ public class UpdateService extends Service {
      */
     private void notifyUser(String result, String msg, int progress){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        builder.setSmallIcon(R.drawable.logo)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.logo))
+        builder.setSmallIcon(R.mipmap.logo)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.logo))
                 .setContentTitle("Downloading...");
         if(progress>0 && progress<=100){
             builder.setProgress(100,progress,false);

@@ -1,6 +1,7 @@
 package com.xrone.julis.compous.HomeFragment.communication.adapter;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -137,11 +138,11 @@ public class TopicListAdapter extends RecyclerView.Adapter<TopicListAdapter.View
             Navigator.TopicWithAutoCompat.start(activity, topic);
         }
 
+
+
         @OnClick(R.id.btn_user)
         void onBtnUserClick() {
             UserDetailActivity.startWithTransitionAnimation(activity, topic.getAuthor().getLoginName(), imgAvatar, topic.getAuthor().getAvatarUrl());
-
-
         }
 
     }
