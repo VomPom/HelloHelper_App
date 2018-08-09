@@ -144,24 +144,24 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/view_about_us"
+            android:id="@+id/chat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:id="@+id/about_us"
+                android:id="@+id/btn_chat"
                 android:layout_margin="5dp"
                 android:layout_width="60.0dip"
                 android:layout_height="60.0dip"
-                android:src="@drawable/app_about_us" />
+                android:src="@drawable/app_chat" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="@dimen/app_title_size"
-                android:text="@string/about_us"
+                android:text="Chat"
                 android:textColor="@color/black1" />
         </LinearLayout>
 

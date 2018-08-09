@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import com.xrone.julis.compous.AppBaseActivity;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.MyAlert;
 import com.xrone.julis.compous.Application.exchangeRate.Data.Currency_id_name;
@@ -36,7 +37,7 @@ import java.util.StringTokenizer;
 
 
 
-public class CurrencyConverterActivity extends Activity {
+public class CurrencyConverterActivity extends AppBaseActivity {
 
 
     RelativeLayout from_layout, to_layout               ;
@@ -113,6 +114,7 @@ public class CurrencyConverterActivity extends Activity {
         button_convert.setOnClickListener(view -> excuteQuery());
 
         btn_exchange_country.setOnClickListener(v -> swapCountryData());
+        initTitleBar(getBaseContext().getResources().getString(R.string.back), getBaseContext().getResources().getString(R.string.exchange_rate), "", this);
     }
 
     /**

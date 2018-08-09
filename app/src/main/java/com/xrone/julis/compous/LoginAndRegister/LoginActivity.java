@@ -16,7 +16,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.xrone.julis.compous.StringData.NetURL;
 import com.xrone.julis.compous.Utils.MyAlert;
-import com.xrone.julis.compous.model.Hello;
+import com.xrone.julis.compous.StringData.Hello;
 import com.xrone.julis.compous.R;
 
 import org.apache.http.Header;

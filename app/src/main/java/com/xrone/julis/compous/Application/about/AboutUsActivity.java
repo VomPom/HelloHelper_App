@@ -9,7 +9,7 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.model.Hello;
+import com.xrone.julis.compous.StringData.Hello;
 
 /**
  * Created by Julis on 2017/10/21.
@@ -42,7 +42,7 @@ public class AboutUsActivity extends Activity {
                 " the text message, and adds English pronunciation and " +
                 "synchronized English subtitles when using the map related function. " +
                 "At the same time, Chinese and foreign users can publish some of their " +
-                "own articles or ideas in the communication community, at the same time," +
+                "own articles or ideas in the Communication community, at the same time," +
                 " comments and replies, and promote exchanges between China and foreign countries.\n" +
                 "Although we have tried to improve, " +
                 "but there are many defects and deficiencies, in order to give you more help," +

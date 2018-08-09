@@ -1,7 +1,6 @@
 package com.xrone.julis.compous.Utils;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -13,8 +12,8 @@ import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.StringData.NetURL;
 import com.xrone.julis.compous.Utils.update.CommonDialog;
 import com.xrone.julis.compous.Utils.update.UpdateService;
-import com.xrone.julis.compous.model.Hello;
-import com.xrone.julis.compous.model.UpdateBean;
+import com.xrone.julis.compous.StringData.Hello;
+import com.xrone.julis.compous.Utils.update.UpdateBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;

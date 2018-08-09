@@ -38,8 +38,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.xrone.julis.compous.AppBaseActivity;
 import com.xrone.julis.compous.StringData.NetURL;
-import com.xrone.julis.compous.model.Hello;
+import com.xrone.julis.compous.StringData.Hello;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.person.view.CircleImageView;
 
@@ -56,7 +57,7 @@ import butterknife.OnClick;
  * Created by Julis on 17/6/20.
  */
 
-public class PersonInfoView extends Activity {
+public class PersonInfoView extends AppBaseActivity {
     //返回给点击头像图篇
     private final int PERSONINFO_CODE=1;
 
@@ -113,6 +114,8 @@ public class PersonInfoView extends Activity {
         Glide.with(this)
                 .load(Hello.head_url)
                 .into(headImage);
+        initTitleBar(getBaseContext().getResources().getString(R.string.back),
+                getBaseContext().getResources().getString(R.string.personal_infomation), "", this);
 
     }
 

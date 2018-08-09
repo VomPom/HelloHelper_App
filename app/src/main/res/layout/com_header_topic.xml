@@ -130,7 +130,7 @@
 
             </LinearLayout>
 
-            <com.xrone.julis.compous.HomeFragment.communication.widget.ContentWebView
+            <com.xrone.julis.compous.Communication.widget.ContentWebView
                 android:id="@+id/web_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

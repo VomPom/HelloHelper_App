@@ -23,7 +23,9 @@
     <string name="Chatting">Chatting</string>
     <string name="Application">Application</string>
     <string name="Personal">Personal</string>
+    <string name="back">Back</string>
     <string name="Learning">Learning</string>
+    <string name="shop">Shop</string>
     <string name="Community">Community</string>
     <string name="share">Share</string>
     <string name="input_translation_words">Input Your Words</string>

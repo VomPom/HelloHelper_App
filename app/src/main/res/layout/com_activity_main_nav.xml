@@ -32,7 +32,7 @@
 
                 android:background="#01000000">
 
-                <com.xrone.julis.compous.HomeFragment.communication.widget.AdaptStatusBarView
+                <com.xrone.julis.compous.Communication.widget.AdaptStatusBarView
                     android:id="@+id/nav_adapt_status_bar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />

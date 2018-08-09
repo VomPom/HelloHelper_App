@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.xrone.julis.compous.Application.OCR.OCRActivity;
+import com.xrone.julis.compous.Application.Talk.ChatActivity;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Application.Express.ExpressActivity;
 import com.xrone.julis.compous.Application.about.AboutUsActivity;
@@ -31,7 +32,7 @@ public class ApplicationFragment extends Fragment{
     @BindView(R.id.btn_express)  ImageView btn_express;
     @BindView(R.id.btn_translate)  ImageView btn_translate;
     @BindView(R.id.btn_map)  ImageView btn_map;
-    @BindView(R.id.about_us) ImageView btn_about_us;
+    @BindView(R.id.btn_chat) ImageView btn_chat;
     @BindView(R.id.btn_exchangerate) ImageView btn_exchangerate;
     @BindView(R.id.btn_ocr) ImageView btn_ocr;
 
@@ -50,7 +51,7 @@ public class ApplicationFragment extends Fragment{
             R.id.btn_map,
             R.id.btn_exchangerate,
             R.id.btn_ocr,
-            R.id.about_us,
+            R.id.btn_chat,
     })
     public void onClick(ImageView view){
         Intent intent= null;
@@ -73,8 +74,8 @@ public class ApplicationFragment extends Fragment{
             case R.id.btn_ocr:
                 intent= new Intent(context,OCRActivity.class);
                 break;
-            case R.id.about_us:
-                intent= new Intent(context,AboutUsActivity.class);
+            case R.id.btn_chat:
+                intent= new Intent(context,ChatActivity.class);
                 break;
 
 

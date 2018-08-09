@@ -26,6 +26,7 @@
     <string name="Application">应用</string>
     <string name="Personal">个人</string>
     <string name="Learning">学习</string>
+    <string name="shop">商城</string>
     <string name="friends">朋友</string>
     <string name="Community">社区</string>
 
@@ -50,6 +51,7 @@
     <string name="takePhoto">拍照</string>
     <string name="tanslate">翻译</string>
     <string name="transl">翻译</string>
+    <string name="back">返回</string>
     <string name="translate">翻译</string>
     <string name="activity">活动</string>
     <string name="reply">与我相关</string>

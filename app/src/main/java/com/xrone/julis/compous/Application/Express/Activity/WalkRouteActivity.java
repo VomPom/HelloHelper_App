@@ -36,7 +36,7 @@ import com.amap.api.services.route.WalkRouteResult;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Application.map.navigation.WalkRouteCalculateActivity;
 import com.xrone.julis.compous.Application.map.utils.AMapUtil;
-import com.xrone.julis.compous.Application.map.utils.ToastUtil;
+import com.xrone.julis.compous.Utils.ToastUtil;
 
 
 public class WalkRouteActivity extends Activity implements OnMapClickListener,

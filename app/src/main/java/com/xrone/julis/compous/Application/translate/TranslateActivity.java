@@ -23,6 +23,7 @@ import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
+import com.xrone.julis.compous.AppBaseActivity;
 import com.xrone.julis.compous.Application.translate.view.ITranslateView;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.MyAlert;
@@ -30,7 +31,6 @@ import com.xrone.julis.compous.Utils.NetworkStatus;
 import com.xrone.julis.compous.Utils.Speaker;
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
 import com.xrone.julis.compous.Utils.TransLatorCallback;
-import com.xrone.julis.compous.model.TranslateResultModel;
 import com.xrone.julis.compous.Application.translate.voice.JsonParser;
 
 import org.json.JSONException;
@@ -48,7 +48,7 @@ import butterknife.OnClick;
  * Created by Julis on 2017/11/11.
  */
 
-public class TranslateActivity extends Activity implements ITranslateView {
+public class TranslateActivity extends AppBaseActivity implements ITranslateView {
 
 
     @BindView(R.id.app_btn_translate)AppCompatButton btnTranslate;
@@ -78,6 +78,7 @@ public class TranslateActivity extends Activity implements ITranslateView {
     public void initViews(){
         mTts = SpeechSynthesizer.createSynthesizer(this, null);
         speaker=new Speaker(this);
+        initTitleBar("Back", getBaseContext().getResources().getString(R.string.translate), "", this);
     }
 
     @OnClick(R.id.app_btn_translate)
@@ -145,7 +146,6 @@ public class TranslateActivity extends Activity implements ITranslateView {
                 System.out.println("初始化失败，错误码：" + code);
             }
         });
-
         mDialog.setUILanguage(Locale.US);
        mDialog.setParameter(SpeechConstant.LANGUAGE, "en_us");
 
@@ -153,6 +153,7 @@ public class TranslateActivity extends Activity implements ITranslateView {
             @Override
             public void onResult(com.iflytek.cloud.RecognizerResult recognizerResult, boolean b) {
                 printResult(recognizerResult);
+                Log.e("julis","s");
             }
             @Override
             public void onError(SpeechError speechError) {

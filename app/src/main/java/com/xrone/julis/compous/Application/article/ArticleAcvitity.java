@@ -66,7 +66,7 @@ public class ArticleAcvitity extends Activity implements AdapterView.OnItemClick
 //
 //    public Handler getarticle = new Handler() {
 //        @Override
-//        public void handleMessage(Message msg) {
+//        public void handleMessage(ChatMessage msg) {
 //            String jsonData = (String) msg.obj;
 //            Log.e("tt", jsonData);
 //

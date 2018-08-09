@@ -62,7 +62,7 @@ import com.xrone.julis.compous.Utils.HttpUtils;
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
 import com.xrone.julis.compous.Utils.TransLatorCallback;
 
-import com.xrone.julis.compous.model.TranslateResultModel;
+import com.xrone.julis.compous.Application.translate.TranslateResultModel;
 import com.xrone.julis.compous.Application.map.navigation.WalkRouteCalculateActivity;
 import com.xrone.julis.compous.Application.map.utils.AMapUtil;
 
@@ -74,7 +74,7 @@ import org.json.JSONObject;
 
 import com.amap.api.services.geocoder.GeocodeSearch.OnGeocodeSearchListener;
 import com.xrone.julis.compous.Application.map.utils.SensorEventHelper;
-import com.xrone.julis.compous.Application.map.utils.ToastUtil;
+import com.xrone.julis.compous.Utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,7 +4,7 @@ package com.xrone.julis.compous.Utils;
 import android.util.Log;
 
 import com.android.volley.Response;
-import com.xrone.julis.compous.model.TranslateResultModel;
+import com.xrone.julis.compous.Application.translate.TranslateResultModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

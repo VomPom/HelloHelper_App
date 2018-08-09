@@ -17,26 +17,24 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.baidu.mobstat.StatService;
 import com.bumptech.glide.Glide;
-import com.xrone.julis.compous.Application.map.navigation.WalkRouteCalculateActivity;
+import com.xrone.julis.compous.Communication.SettingActivity;
+import com.xrone.julis.compous.Communication.UserDetailActivity;
+import com.xrone.julis.compous.HomeFragment.ShopFragment;
 import com.xrone.julis.compous.Utils.BottomNavigationViewHelper;
 import com.xrone.julis.compous.Utils.CheckRequiredPermissionUtils;
 import com.xrone.julis.compous.Utils.CheckVersion;
 import com.xrone.julis.compous.HomeFragment.NavigationItem;
-import com.xrone.julis.compous.HomeFragment.communication.SettingActivity;
-import com.xrone.julis.compous.HomeFragment.communication.UserDetailActivity;
-import com.xrone.julis.compous.HomeFragment.communication.listener.NavigationOpenClickListener;
+import com.xrone.julis.compous.Communication.listener.NavigationOpenClickListener;
 import com.xrone.julis.compous.LoginAndRegister.LoginActivity;
 import com.xrone.julis.compous.Application.FeedbackActivity;
 import com.xrone.julis.compous.Application.about.AboutUsActivity;
 import com.xrone.julis.compous.Application.exchangeRate.Data.Global_Data;
 import com.xrone.julis.compous.Application.ApplicationFragment;
 import com.xrone.julis.compous.HomeFragment.HomeFragment;
-import com.xrone.julis.compous.HomeFragment.PersonFragment;
 import com.xrone.julis.compous.Utils.MyAlert;
-import com.xrone.julis.compous.model.Hello;
+import com.xrone.julis.compous.StringData.Hello;
 import com.xrone.julis.compous.person.PersonInfoView;
 import com.xrone.julis.compous.person.view.CircleImageView;
 
@@ -77,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
 
     private android.app.FragmentTransaction transaction;
-    private PersonFragment personFrag=new PersonFragment();
+    private ShopFragment shopFragment=new ShopFragment();
     private HomeFragment homeFrag = new HomeFragment();
     private ApplicationFragment applicationFrag= new ApplicationFragment();
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
@@ -101,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(applicationFrag);
                     return true;
                 case R.id.navigation_personal:
-                    replaceFragment(personFrag);
+                    replaceFragment(shopFragment);
                     return true;
             }
             return false;
@@ -164,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
         if (LoginActivity.checkLogin(this)) {
           // startActivityForResult(new Intent(this, PersonInfoView.class),PERSONINFO_CODE);
             UserDetailActivity.startWithTransitionAnimation(this, Hello.username, imgAvatar, Hello.head_url);
-
         }
     }
 
@@ -173,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
        Intent intent= new Intent(getBaseContext(),PersonInfoView.class);
         startActivity(intent);
     }
+
     @OnClick(R.id.btn_logout)
     void onBtnLogoutClick() {
         if(Hello.isLogin){
@@ -180,13 +178,14 @@ public class MainActivity extends AppCompatActivity {
             updateUserInfoViews();
         }
     }
+
     @OnClick({
             R.id.btn_nav_notification,
             R.id.btn_nav_setting,
             R.id.btn_nav_about,
             R.id.btn_nav_feedback,
-
     })
+
     void onOtherNavigationItemClick(NavigationItem itemView) {
         Intent intent= null;
         Context context=MainActivity.this;
@@ -205,8 +204,8 @@ public class MainActivity extends AppCompatActivity {
                 // aboutAction.startDelayed();
                 intent= new Intent(context,SettingActivity.class);
                 break;
-
         }
+
         drawerLayout.closeDrawers();
         startActivity(intent);
     }

@@ -10,7 +10,6 @@
         <!--android:icon="@drawable/ic_dashboard_black_24dp"-->
         <!--android:title="@string/Chatting" />-->
     <item
-        
         android:id="@+id/navigation_application"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/Application" />
@@ -18,6 +17,6 @@
     <item
         android:id="@+id/navigation_personal"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/Learning" />
+        android:title="@string/shop" />
 
 </menu>

@@ -94,6 +94,7 @@
         <activity android:name=".Application.map.MapActivity" />
         <activity android:name=".Application.OCR.OCRActivity" />
         <activity android:name=".Application.OCR.camera.CameraActivity" />
+        <activity android:name=".Application.Talk.ChatActivity"/>
         <service android:name=".Utils.update.UpdateService" />
 
         <activity android:name=".Application.map.navigation.WalkRouteCalculateActivity" />
@@ -108,11 +109,11 @@
         <activity android:name=".Application.Express.Activity.WalkRouteDetailActivity" />
         <activity android:name=".Application.article.ArticleAcvitity" />
         <activity android:name=".Application.translate.TranslateActivity" />
-        <activity android:name=".HomeFragment.communication.TopicActivity" />
+        <activity android:name=".Communication.TopicActivity" />
         <!-- <activity android:name=".view.application.communicatCommunicationActivitytion"/> -->
-        <activity android:name=".HomeFragment.communication.CreateTopicActivity" />
-        <activity android:name=".HomeFragment.communication.SettingActivity" />
-        <activity android:name=".HomeFragment.communication.UserDetailActivity" />
+        <activity android:name=".Communication.CreateTopicActivity" />
+        <activity android:name=".Communication.SettingActivity" />
+        <activity android:name=".Communication.UserDetailActivity" />
 
         <service android:name="com.amap.api.location.APSService" />
 

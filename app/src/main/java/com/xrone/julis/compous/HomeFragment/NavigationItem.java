@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.HomeFragment.communication.util.ResUtils;
+import com.xrone.julis.compous.Communication.util.ResUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.xrone.julis.compous.HomeFragment.communication.HeaderAndFooterRecyclerView.HeaderAndFooterRecyclerView
+            <com.xrone.julis.compous.Communication.HeaderAndFooterRecyclerView.HeaderAndFooterRecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

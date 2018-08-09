@@ -13,17 +13,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xrone.julis.compous.R;
-import com.xrone.julis.compous.HomeFragment.communication.CreateTopicActivity;
-import com.xrone.julis.compous.HomeFragment.communication.HeaderAndFooterRecyclerView.HeaderAndFooterRecyclerView;
-import com.xrone.julis.compous.HomeFragment.communication.Model.Topic;
-import com.xrone.julis.compous.HomeFragment.communication.Presenter.MainPresenter;
-import com.xrone.julis.compous.HomeFragment.communication.adapter.TopicListAdapter;
-import com.xrone.julis.compous.HomeFragment.communication.listener.FloatingActionButtonBehaviorListener;
-import com.xrone.julis.compous.HomeFragment.communication.listener.IMainPresenter;
-import com.xrone.julis.compous.HomeFragment.communication.util.ToastUtils;
-import com.xrone.julis.compous.HomeFragment.communication.view.IBackToContentTopView;
-import com.xrone.julis.compous.HomeFragment.communication.view.IMainView;
-import com.xrone.julis.compous.HomeFragment.communication.view.LoadMoreFooter;
+import com.xrone.julis.compous.Communication.CreateTopicActivity;
+import com.xrone.julis.compous.Communication.HeaderAndFooterRecyclerView.HeaderAndFooterRecyclerView;
+import com.xrone.julis.compous.Communication.Model.Topic;
+import com.xrone.julis.compous.Communication.Presenter.MainPresenter;
+import com.xrone.julis.compous.Communication.adapter.TopicListAdapter;
+import com.xrone.julis.compous.Communication.listener.FloatingActionButtonBehaviorListener;
+import com.xrone.julis.compous.Communication.Presenter.IMainPresenter;
+import com.xrone.julis.compous.Communication.util.ToastUtils;
+import com.xrone.julis.compous.Communication.view.IBackToContentTopView;
+import com.xrone.julis.compous.Communication.view.IMainView;
+import com.xrone.julis.compous.Communication.view.LoadMoreFooter;
 import com.xrone.julis.compous.LoginAndRegister.LoginActivity;
 
 import java.util.List;

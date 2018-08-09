@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.baidu.mobstat.StatService;
+import com.xrone.julis.compous.AppBaseActivity;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Utils.GpsStatus;
 import com.xrone.julis.compous.Application.Express.Activity.WalkRouteActivity;
@@ -35,7 +37,7 @@ import butterknife.OnClick;
  * Created by Julis on 17/6/12.
  */
 
-public class ExpressActivity extends Activity implements IExpressView{
+public class ExpressActivity extends AppBaseActivity implements IExpressView{
 
     @BindView(R.id.btn_express_commit) TextView btn_submit;
     @BindView(R.id.btn_express_clear)  TextView btn_clear;
@@ -45,6 +47,7 @@ public class ExpressActivity extends Activity implements IExpressView{
     private double deslongitude;
     private ProgressDialog pDialog;
     private IExpressPresenter expressPresenter;
+
 
     /**
      * 地图
@@ -68,6 +71,8 @@ public class ExpressActivity extends Activity implements IExpressView{
         pDialog=new ProgressDialog(ExpressActivity.this);
         pDialog.setMessage("Searching...");
         expressPresenter=new ExpressPresenter(this,this);
+        initTitleBar("Back", getBaseContext().getResources().getString(R.string.express), "", this);
+
     }
 
     @OnClick({

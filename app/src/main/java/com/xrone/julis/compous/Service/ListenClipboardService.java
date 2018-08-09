@@ -11,7 +11,7 @@ import android.util.Log;
 
 import com.xrone.julis.compous.Utils.TransLaterUtilts;
 import com.xrone.julis.compous.Utils.TransLatorCallback;
-import com.xrone.julis.compous.model.TranslateResultModel;
+import com.xrone.julis.compous.Application.translate.TranslateResultModel;
 import com.xrone.julis.compous.Application.translate.view.TipViewController;
 
 

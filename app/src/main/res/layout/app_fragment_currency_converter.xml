@@ -6,7 +6,9 @@
     android:background="#fff"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_title_exchangerate" />
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/common_title_layout" />
 
 
     <RelativeLayout
