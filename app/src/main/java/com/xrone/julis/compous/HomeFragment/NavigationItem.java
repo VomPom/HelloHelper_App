@@ -17,6 +17,7 @@ import android.widget.Checkable;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.xrone.julis.compous.R;
@@ -97,6 +98,7 @@ public class NavigationItem extends FrameLayout implements Checkable {
     @Override
     public boolean isChecked() {
         return checked;
+
     }
 
     @Override

@@ -92,9 +92,6 @@ public class ExpressActivity extends AppBaseActivity implements IExpressView{
         }
     }
 
-
-
-
     /**
      * 开始定位
      */
@@ -121,8 +118,6 @@ public class ExpressActivity extends AppBaseActivity implements IExpressView{
         // 启动定位
         locationClient.startLocation();
     }
-
-
     /**
      * 默认的定位参数
      * @since 2.8.0
@@ -206,7 +201,8 @@ public class ExpressActivity extends AppBaseActivity implements IExpressView{
     public void submit() {
         StatService.onEvent(ExpressActivity.this, "expressSubmit", "expressSubmit", 1);
         if(TextUtils.isEmpty(ed_message.getText().toString())){
-            Snackbar.make(btn_submit, getString(R.string.app_expreess_tip_noInput), Snackbar.LENGTH_SHORT)
+            Snackbar.make(btn_submit, getString(R.string.app_expreess_tip_noInput),
+                    Snackbar.LENGTH_SHORT)
                     .show();
         }else{
             pDialog.show();

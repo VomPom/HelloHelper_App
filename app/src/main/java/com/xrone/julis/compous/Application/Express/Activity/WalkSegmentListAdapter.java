@@ -13,10 +13,12 @@ import com.xrone.julis.compous.Application.map.utils.AMapUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Created by Julis on 17/6/12.
+ */
 
 /**
  * 步行路线详情页adapter
- * 
  */
 public class WalkSegmentListAdapter extends BaseAdapter {
 	private Context mContext;

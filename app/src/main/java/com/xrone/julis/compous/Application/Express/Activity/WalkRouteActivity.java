@@ -38,6 +38,9 @@ import com.xrone.julis.compous.Application.map.navigation.WalkRouteCalculateActi
 import com.xrone.julis.compous.Application.map.utils.AMapUtil;
 import com.xrone.julis.compous.Utils.ToastUtil;
 
+/**
+ * Created by Julis on 17/6/12.
+ */
 
 public class WalkRouteActivity extends Activity implements OnMapClickListener,
         OnMarkerClickListener, OnInfoWindowClickListener, InfoWindowAdapter, OnRouteSearchListener {

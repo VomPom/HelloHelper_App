@@ -11,7 +11,9 @@ import com.amap.api.services.route.WalkPath;
 import com.xrone.julis.compous.R;
 import com.xrone.julis.compous.Application.map.utils.AMapUtil;
 
-
+/**
+ * Created by Julis on 17/6/12.
+ */
 public class WalkRouteDetailActivity extends Activity {
 	private WalkPath mWalkPath;
 	private TextView mTitle,mTitleWalkRoute;

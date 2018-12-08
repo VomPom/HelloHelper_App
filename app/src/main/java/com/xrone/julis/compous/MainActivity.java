@@ -46,8 +46,8 @@ import butterknife.OnClick;
 
 
 public class MainActivity extends AppCompatActivity {
-    private final int LOGIN_CODE=0;
-    private final int PERSONINFO_CODE=1;
+    private final int LOGIN_CODE = 0;
+    private final int PERSONINFO_CODE = 1;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
